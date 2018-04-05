@@ -1,4 +1,12 @@
-### 1. 개발자를 위한 솔리디티 실습 온라인 튜토리얼   
+### 1. 이타인클럽 (steemit)
+https://opentutorials.org/course/2865  
+
+### 2. 블로코 레퍼런스
+■ 공식 문서 : https://docs.blocko.io/?javascript  
+■ coinStack : https://dashboard.blocko.io/manage/dashboard  
+■ test : https://playground.blocko.io/  
+
+### 3. 개발자를 위한 솔리디티 실습 온라인 튜토리얼   
 블록체인 열기에 비해 기술 이해도는 아직 낮고, 참고할만한 기술 자료도 많지 않고, 강의는 더더욱 없는 시점에서 개발자분들께 조금이라도 더 도움이 되고자 프로그래머스 팀이 직접 준비한 튜토리얼입니다. 기술 동향은 빠른데 시간은 없는 개발자분들을 위해 사전 준비과정을 축소하고, 무료로 선공개하오니 많이 관심 가져주세요!  
   
 ■ 본론부터 들어가는 튜토리얼: 뭐 하나 새로 배울 때 마다 신경써야하는 개발환경세팅, 사전 설치사항 없이 웹에서 바로 코딩 실습.  
@@ -8,7 +16,5 @@
 
 ▶ https://goo.gl/6bZaDL  
 
-### 2. 블로코 레퍼런스
-■ 공식 문서 : https://docs.blocko.io/?javascript  
-■ coinStack : https://dashboard.blocko.io/manage/dashboard  
-■ test : https://playground.blocko.io/  
+### 4. 기타
+■ 헌진 개인공부 : www.github.com/KimHunJin/Blockchain
