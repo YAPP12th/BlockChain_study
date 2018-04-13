@@ -1,5 +1,4 @@
 # YAPP 12기 블록체인 스터디 2주차 (Tech)
-
 ### 1. 진행내용  
 - 각자가 알고 있거나, 이번 스터디를 위해 공부한 블록체인 개념 발표
 - 3주차 오픈 세미나 실습을 위한 사전 준비
@@ -35,3 +34,5 @@
 > - https://github.com/nepho8/wallet-example.git clone  
 >
 > 참고(우아한 javascript 개발) : https://speakerdeck.com/nigayo/uahan-jabaseukeuribteu-gaebal
+
+![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/2_tech_main.jpg)
