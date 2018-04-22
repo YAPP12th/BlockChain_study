@@ -1,0 +1,152 @@
+//
+// Pagination (multiple pages)
+// --------------------------------------------------
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: @line-height-computed 0;
+  border-radius: @border-radius-base;
+
+  > li {
+    display: inline; // Remove list-style and block-level defaults
+    > a,
+    > span {
+      position: relative;
+      float: left; // Collapse white-space
+      padding: @padding-base-vertical @padding-base-horizontal;
+      //line-height: @line-height-base;
+      text-decoration: none;
+      // color: @pagination-color;
+      color: @gray-dark;
+      background-color: @pagination-bg;
+      border: 1px solid @pagination-border;
+      margin-left: -1px;
+      i{
+        float: left;
+      }
+    }
+    &:first-child {
+      > a,
+      > span {
+        margin-left: 0;
+        .border-left-radius(@border-radius-base);
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        .border-right-radius(@border-radius-base);
+      }
+    }
+  }
+
+  > li > a,
+  > li > span {
+    &:hover,
+    &:focus {
+      // color: @pagination-hover-color;
+      color: @gray-dark;
+      background-color: @pagination-hover-bg;
+      border-color: @pagination-hover-border;
+    }
+  }
+
+   > li > a,
+  > li > span {
+    &:active{
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+    }
+  } 
+
+  > .active > a,
+  > .active > span {
+    &,
+    &:hover,
+    &:focus {
+      z-index: 2;
+      // color: @pagination-active-color;
+      color: @gray-dark;
+      // background-color: @pagination-active-bg;
+      background-color: @gray-300;
+      border-color: @gray-300;
+      // border-color: @pagination-active-border;
+      cursor: default;
+    }
+  }
+
+  > .active > a,
+  > .active > span {
+    &:active {
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+      color: @gray-dark;
+      background-color: @gray-300;
+    }
+  }
+
+  > .disabled {
+    > span,
+    > span:hover,
+    > span:focus,
+    > a,
+    > a:hover,
+    > a:focus {
+      color: @pagination-disabled-color;
+      background-color: @pagination-disabled-bg;
+      // border-color: @pagination-disabled-border;
+      border: 1px solid @pagination-border;
+      cursor: @cursor-disabled;
+    }
+  }
+}
+
+// pager
+.pager {
+
+  li a {
+    &:hover,
+    &:focus {
+      color: @gray-dark;
+      background-color: @pagination-hover-bg;
+      border-color: @pagination-hover-border;
+    }
+  }
+
+   li a {
+    &:active{
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+    }
+  } 
+
+  .active > a {
+    &,
+    &:hover,
+    &:focus {
+      z-index: 2;
+      color: @gray-dark;
+      background-color: @gray-300;
+      border-color: @gray-300;
+      cursor: default;
+    }
+  }
+
+  .active > a {
+    &:active {
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+      color: @gray-dark;
+      background-color: @gray-300;
+    }
+  }
+}
+
+// Sizing
+// --------------------------------------------------
+
+// Large
+.pagination-lg {
+  .pagination-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @border-radius-large);
+}
+
+// Small
+.pagination-sm {
+  .pagination-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @border-radius-small);
+}

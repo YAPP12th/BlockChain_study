@@ -1,0 +1,77 @@
+// Mapael
+    .demo-mapael.map > svg {max-height: 189px;}
+
+
+// New Memeber Table in Dashboard
+    .demo-new-members {
+        table {.icheck {margin: 0 -20px -5px 0 !important;}}
+        table td.td-btn {line-height: 1}
+
+        .footer-pagination {
+            background: @gray-100;
+            border-top: 2px solid @border-darker;
+            padding: 10px;
+            border-bottom-right-radius: @border-radius-base;
+            .pagination {
+                margin: 0 !important;
+                float: right;
+            }
+        }
+    }
+
+
+// Chartist
+
+    .demo-chartist {
+        .ct-series-a .ct-line, .ct-series-a .ct-point {stroke: @gray-100;}
+        .ct-series-b .ct-line, .ct-series-b .ct-point {stroke: @blue-gray-100;}
+        .ct-series-c .ct-line, .ct-series-c .ct-point {stroke: @red-200;}
+
+        .ct-point {stroke-width: 6px;}
+        .ct-line {stroke-width: 2px;}
+        .ct-label {font-size: 11px;}
+        .ct-grid {
+            &.ct-vertical {
+                stroke: rgba(0, 0, 0, 0.04);
+                stroke-width: 1px;
+            }
+            &.ct-horizontal {
+                stroke: rgba(0, 0, 0, 0.04);
+                stroke-width: 1px;
+            }
+        }
+
+        .ct-series-a .ct-area {
+            fill: @gray-100;
+            fill-opacity: 0.125;
+        }
+        .ct-series-b .ct-area {
+            fill: @blue-gray-100;
+            fill-opacity: 0.125;
+        }
+        .ct-series-c .ct-area {
+            fill: @red-200;
+            fill-opacity: 0.125;
+        }
+    }
+
+    .demo-chartist-sales {
+
+        .ct-series-a .ct-bar {stroke: @gray-100;}
+        .ct-series-b .ct-bar {stroke: @blue-gray-100;}
+        .ct-series-c .ct-bar {stroke: @red-200;}
+
+        .ct-label {font-size: 11px;}
+        .ct-bar {stroke-width: 8px;}
+        .ct-grid {
+            &.ct-vertical {
+                stroke: rgba(0, 0, 0, 0.04);
+                stroke-width: 1px;
+            }
+            &.ct-horizontal {
+                stroke-width: 0;
+            }
+        }
+    }
+
+    .ct-label {font-size: 11px !important;}

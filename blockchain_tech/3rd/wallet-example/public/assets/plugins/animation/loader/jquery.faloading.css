@@ -1,0 +1,35 @@
+/**
+ * Version: 0.2
+ * Updated: 2016-01-06
+ *
+ * jQuery plugin for modal Font Awesome spin loading icons
+ *
+ * Copyright (c) 2015 Alê Monteiro (contato@alemonteiro.com.br, https://github.com/alemonteiro/jquery-fa-loading)
+ *
+ * Licensed under the MIT (LICENSE.txt)
+ **/
+.fa-loading-bg 
+{
+    position: absolute;
+    top: 0; left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+}
+.fa-loading-icon-wrapper 
+{
+    position: absolute;
+    z-index: 999999;
+	top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+	top: 50%;
+    text-align: center;
+}
+.fa-loading-icon
+{
+	margin-top: -2.5em;
+    font-size: 5em;
+	color: #000;
+}

@@ -1,0 +1,181 @@
+// ---------------------
+// Aside Content Layout
+// ---------------------
+
+// Scaffolding for Aside Content
+
+
+	@media (max-width: @screen-xs-max) {
+		.aside-wrapper {
+			margin: 0 -8px;
+		}
+		.aside-bar{
+			border-right: none!important;
+		}
+	}
+
+	@media (min-width: @grid-float-breakpoint) {
+		.aside-content {
+			padding: 0;
+		    height: 100%;
+		    position: absolute;
+		    overflow: hidden;
+
+			.page-heading {
+			    margin-bottom: 0;
+			}
+
+
+			.aside-wrapper {
+				width: 100%;
+				height: 100%;
+				display: table;
+				table-layout: fixed;
+				
+				margin-top: 0;
+				padding-top: 0;
+
+				.aside-body {
+					display: table-row;
+					.aside-cell {
+						display: table-cell;
+						vertical-align: top;
+					}
+				}
+			}
+
+			.aside-col {
+				//background: @gray-75;
+				width: 240px;
+			}
+		}
+	}
+
+// The Aside Bar Basic Styling
+
+	.aside-bar {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: table;
+		background-color: @gray-200;
+		.aside-bar-body {display: table-row; height: 100%;padding: 16px;}
+	}
+
+// Internal Styles
+
+	.aside-bar {
+		background-color: #fff;
+		.aside-bar-header { 
+			//padding: 16px;
+			padding-bottom: 16px;
+			border-bottom: 1px solid @border-darker;
+			h1 {
+				font-weight: 300;
+				margin: 0;
+				line-height: 32px;
+				font-size: @font-size-h3;
+			}
+		}
+		.aside-bar-body {
+			position: relative;
+			ul.list-unstyled{padding: 8px 16px;}
+
+			ul.acc-menu {
+				.open-up.hasChild{
+					&:hover{
+						position: relative!important;
+						ul.dropdown-menu{
+							position: relative!important;
+						}
+					}
+				}
+				font-size: 0;
+				> li:first-child > a {border-top: 0;}
+				white-space: normal; margin: 0; padding-left: 0 !important; 
+
+				.badge {right: 16px !important; margin-top: 0; position: absolute; font-size: @font-size-small;}
+				.label {float: right; position: absolute; right: 40px !important; font-size: @font-size-small;}
+				
+				a {
+					&:extend(.clearfix all);
+					text-decoration: none; 
+					span.text {
+						line-height: 16px;
+						display: inline-block;
+						float: left;
+						white-space: normal;
+						max-width: 168px;
+						font-size: @font-size-base;
+						color: @gray-dark;
+					}
+					span.icon {
+						margin-left: 0px; 
+						margin-right: 16px; 
+						width: 16px;
+						font-size: @icon-font-size-base;
+						line-height: 16px;
+						height: 16px;
+						float: left;
+						text-align: center; 
+						display: inline-block;
+						color: @gray-light;
+					}
+					&:hover {
+						color: @gray-darker;
+						background-color: #fff;
+						span.icon, span.text {color: @gray-darker}
+					}
+				}
+				ul {padding: 0; padding-left: 0 !important; list-style: none;}
+				ul, ul li a {border-top: none; box-shadow: none;}
+				
+				//Main Menu Styles - Level 1
+				li{display: block; overflow: hidden;}
+				li a {
+					display: block; 
+					padding: 12px 16px; 
+					position: relative; 
+					font-weight: 600;
+					&:extend(.font-size-zero all);
+					white-space: nowrap;
+				}
+
+				//>li.active>a {padding-left: 14px !important;}
+				>li.active>a, >li:hover.open.active>a {
+					border-width: 0 0 0 0;
+					border-style: solid; 
+					border-color: @brand-primary; 
+					background-color: @gray-150;
+					span.icon, span.text {color: @gray-darker}
+				}
+
+
+				li.disabled-link a {
+			   		cursor: @cursor-disabled;
+			   		font-style: italic;
+				}
+			}
+			form{
+				border-top: 1px solid @gray-300;
+				padding: 16px 8px 0 8px;
+
+				float: left;
+				.form-group{
+					float: left;
+				}
+			}
+		}
+		.aside-bar-footer {
+			border-top: 1px solid @border-darker;
+		}
+	}
+
+	.aside-cell:not(.aside-col) { // Body
+		// padding: 8px;
+
+		.page-heading {
+			margin: 0;
+		}
+	}
+

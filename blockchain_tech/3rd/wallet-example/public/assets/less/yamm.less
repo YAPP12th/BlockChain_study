@@ -1,0 +1,94 @@
+/*!
+ * Yamm!3
+ * Yet another megamenu for Bootstrap 3
+ * 
+ * http://geedmo.github.com/yamm3
+ */
+
+//-----------------------------
+//  Yamm Styles
+//-----------------------------
+
+.yamm {
+
+  // reset positions 
+  .nav, .collapse, .dropup, .dropdown {
+  	position: static;
+  }  
+
+  // propagate menu position under container for fw navbars
+  .container {
+  	position: relative;
+  }
+
+  // by default aligns menu to left
+  .dropdown-menu {
+  	left: auto;
+  }
+  // ensure a good position
+  .nav.navbar-right .dropdown-menu {
+  	left: auto;
+  	right: 0;
+  }
+
+  // Content with padding
+  .yamm-content {
+  }
+
+  // Fullwidth menu
+  .dropdown.yamm-fw .dropdown-menu {
+  	left: 0; right: 0;
+  }
+
+
+  // Tectonic
+  .dropdown-menu {
+  	border-bottom-left-radius: @border-radius-base;
+  	border-bottom-right-radius: @border-radius-base;
+  }
+
+}
+
+
+.yamm {
+  .yamm-content {
+    .yamm-col {
+      > .yamm-category {margin: 0 !important;}
+      .yamm-category {
+        font-size: @font-size-small;
+        color: @gray-light;
+        text-transform: uppercase;
+        line-height: 32px;
+        font-weight: 700;
+        padding: 0;
+        margin: 0;
+      }
+      padding: 0 16px;
+      @media(max-width: 800px){
+        padding: 0 24px 8px;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        &.without-icon {
+          .category-heading {padding: 0 16px;}
+          span {padding-left: 0 !important;}
+          i {display: none !important;}
+        }
+        li {
+          margin: 0;
+          a {
+            color: @gray-dark;
+            display: block;
+            margin: 0 -8px !important;
+            border-radius: @border-radius-base;
+            &:hover {
+              background-color: @gray-100;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,735 @@
+//
+// Leftbar/leftbar
+// --------------------------------------------------
+
+
+// Leftbar Menu
+
+	.leftbar nav.widget-body>ul.acc-menu {
+		font-size: 0;
+		> li:first-child > a {border-top: 0;}
+		white-space: normal; margin: 0; padding-left: 0 !important; 
+
+		.badge {right: 16px !important; margin-top: 0; position: absolute; font-size: @font-size-small;}
+		.label {float: right; position: absolute; right: 16px !important; font-size: @font-size-small;}
+
+		//li.hasChild .badge, li.hasChild .label {right: 40px !important;}
+		li.hasChild .label {right: 40px !important;}
+		
+		a {
+			&:extend(.clearfix all);
+			text-decoration: none; 
+			span.text {
+				line-height: 16px;
+				display: inline-block;
+				float: left;
+				white-space: normal;
+				max-width: 168px;
+				font-size: @font-size-base;
+			}
+			span.icon {
+				margin-left: 0px; 
+				margin-right: 16px; 
+				width: 16px;
+				font-size: @icon-font-size-base;
+				line-height: 16px;
+				height: 16px;
+				float: left;
+				text-align: center; 
+				display: inline-block;
+			}
+		}
+		ul {padding: 0; padding-left: 0 !important; list-style: none;}
+		ul, ul li a {border-top: none; box-shadow: none;}
+		
+		//Main Menu Styles - Level 1
+		li{display: block; overflow: hidden;}
+		li a {
+			display: block; 
+			padding: 12px 16px; 
+			position: relative; 
+			font-weight: 400;
+			&:extend(.font-size-zero all);
+			white-space: nowrap;
+		}
+
+		>li.active>a {padding-left: 14px !important;}
+		>li.active>a, >li:hover.open.active>a{border-width: 0 0 0 2px;border-style: solid;}
+		
+		
+		// Submenu Styles - Level 2
+		ul li a {padding: 12px 16px 12px 48px; font-weight: 400;}
+		   li.active > a {font-weight: 600;}
+		ul li.active:not(.open)> a {font-weight: 400;}
+		li > ul {height:0; transition-duration: .15s;margin-left: -48px;opacity: .1;}
+		li.open > ul {margin-left: 0px;opacity: 1;}
+		
+		ul ul {padding: 0;} //Removes the extra stacked padding
+		
+		// All other levels
+		li li li a {padding-left: 64px;} //level 3
+		ul ul ul li a {padding-left: 80px} // level 4
+		ul ul ul ul li a {padding-left: 96px} // level 5
+
+
+		li.disabled-link a {
+			cursor: @cursor-disabled;
+			font-style: italic;
+		}
+	}
+
+	.leftbar nav.widget-body {padding: 0 !important}
+
+// Arrows
+	.leftbar nav.widget-body>ul.acc-menu li.hasChild {
+		&>a {position: relative; &:extend(.clearfix all);}
+
+		&>a:before {.opacity(0.5);}
+
+		&>a:before {content: "\f3d3";}
+		&.open>a:before {content: "\f3d0";}
+
+		&>a:before, 
+		&.open>a:before,
+		&.open>a:before {
+			font-family: Ionicons;
+			font-style: normal;
+			font-weight: normal;
+			display: inline-block;
+			text-decoration: inherit;
+			text-align: center;
+			font-size: @icon-font-size-base;
+			line-height: 16px;
+			padding-right: 0px;
+			width: 16px;
+			margin-top: 0;
+			position: absolute;
+			right: 16px;
+			float: right;
+			@media(max-width: @screen-lg){
+				//right: 32px;
+			}
+		}
+	}
+
+
+	// Arrow on collapse (first level, always shows opened)
+
+	body.leftbar-collapsed .leftbar nav.widget-body>ul.acc-menu>li.hasChild>a:before {content:""}
+	body.leftbar-collapsed .leftbar nav.widget-body>ul.acc-menu>li.hasChild:hover>a:before  {
+		content: "\f3d3"; 
+		.opacity(0.33);
+	}
+
+	// Turn arrow on sidebear collapsed hover
+	body.leftbar-collapsed {.leftbar nav.widget-body>ul.acc-menu > li.hasChild:hover>a:before {content: "\f3d0";}}
+ 
+
+	// Necessary for leftbar to work properly
+	.leftbar-collapsed nav > ul > .hasChild {
+		overflow: visible!important;
+		> ul.acc-menu {display: none !important;}
+		&:hover > ul.acc-menu {
+			display: block !important;
+			opacity: 1;
+			margin-left: 0px!important;
+			height:auto!important;
+		}
+	}
+
+	.nav-separator {
+		&:extend(.leftbar .widget .widget-heading all);
+	}
+
+	li + li.nav-separator {margin-top: 16px;}
+
+// Collapsed
+
+	body.leftbar-collapsed{
+		.widget nav.widget-body > ul > li {
+			> a{
+				span.text{
+					display: none;
+				}
+			}
+			&:hover {
+				width: 248px;
+				z-index: 1512;
+
+				span.label {
+					display: inline;
+					right: 40px !important;
+				}
+
+				> a {
+					span.text{display: block;left: 64px;}
+				}
+				
+				>ul {
+					display: block;
+					position: absolute;
+					left: 48px;
+					width: 200px;
+					>li>a {padding-left: 16px; padding-right: 16px;}
+					>li li>a {padding-left: 32px!important; padding-right: 16px;}
+					>li li li>a {padding-left: 56px; padding-right: 16px;}
+					>li li li li>a {padding-left: 64px; padding-right: 16px;}
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		body.leftbar-collapsed {
+
+			//Apart from some widgets, hide everything
+			.leftbar {
+				.widget:not(.stay-on-collapse) {display: none !important;}
+				.widget.stay-on-collapse {
+					.widget-heading, .nav-separator {
+						//Hide headings in all cases
+						font-size: 0;
+						border-style: solid;
+						border-width: 2px 0 0 0;
+						padding: 8px 0;
+						line-height: 0;
+						width: 48px !important;
+					}
+					li:first-child.nav-separator {border-width: 0;}
+				}
+			}
+			
+
+			//leftbar as collapsed
+			.static-leftbar-wrapper {
+				&, & > div {
+					white-space: nowrap;
+					width: 48px;
+					overflow: visible;
+				}
+				.widget nav.widget-body > ul.acc-menu ul {
+					border-bottom-right-radius: 0;
+					li {
+						a {
+							span.badge {
+								right: 40px !important;
+								left: auto;
+								top: 12px;
+							}
+						}
+					}
+				}
+				.widget nav.widget-body > ul > li {
+					white-space: nowrap;
+					position: relative;
+					> a {padding: 12px 16px;}
+					&, > a {
+						&, &.hasChild {
+							border-radius: 0;
+						}
+					}
+					&.hasChild:hover > a, &:hover > a {border-right: 0 !important}
+					&.hasChild:hover > ul {
+						box-shadow: 0 0 1px rgba(27, 34, 44, 0.12), 0 16px 40px -8px rgba(27, 34, 44, 0.2);
+						padding-top: 40px;
+						margin-top: -40px;
+						z-index: -1;
+					}
+					span.badge {
+						right: inherit !important;
+						left: 24px;
+						top: 6px;
+					}
+					span.label {
+						display: none;
+					}
+
+					&:hover {
+						width: 248px;
+						z-index: 1512;
+
+						span.label {
+							display: inline;
+							right: 40px !important;
+						}
+						
+						>ul {
+							display: block;
+							position: absolute;
+							left: 48px;
+							width: 200px;
+							>li>a {padding-left: 16px; padding-right: 16px;}
+							>li li>a {padding-left: 32px!important; padding-right: 16px;}
+							>li li li>a {padding-left: 56px; padding-right: 16px;}
+							>li li li li>a {padding-left: 64px; padding-right: 16px;}
+						}
+					}
+
+					&.active {
+						> ul {display: none !important;}
+						&:hover {
+							> ul {display: block !important;}
+						}
+					}
+				}
+			}
+		}
+
+		body.leftbar-collapsed .static-leftbar-wrapper .widget nav.widget-body > ul.acc-menu > li {
+			&:first-child:hover {border-bottom-right-radius: 0;}
+			> a > .text {position: absolute;}
+			> ul.acc-menu > li {
+				> a > .text {position: relative;}
+				&:hover {
+					> a {
+					}
+					&.hasChild > a {
+						border-bottom-right-radius: 0;
+					}
+				}
+				> ul {
+				}
+			}
+		}
+	}
+
+	// Collapse at small screens
+
+		@media screen and (max-width: 768px) {
+			.static-leftbar-wrapper {
+				.transition(~'width 0ms ease-out');
+			}
+
+			.static-content-wrapper {overflow: hidden;} // Because offcanvas
+
+			body.leftbar-collapsed .static-leftbar-wrapper {
+				width: 0px;
+			}
+
+			.leftbar-collapsed .static-leftbar {display: none;}
+		}
+
+		.static-content-wrapper {background: @body-bg}
+
+
+// Scrollbars on the leftbar
+
+	.static-leftbar {
+		.leftbar-scroll & {
+			position: fixed !important;
+			top: 56px;
+			bottom: 0px;
+		}
+		@media (max-width: @screen-xs-max) {
+			position: fixed !important;
+			top: 56px;
+			bottom: 0px;		
+			overflow-y: auto;
+			.widget > .widget-body > ul > li > a {border-right: 0 !important}
+		}
+	}
+
+// Small Leftbar version
+	// In case of small leftbar versios, leftbar-collapsed has the opposite
+	// action of default. When it does not have leftbar-collapsed class, leftbar will not appear.
+	// When there will be leftbar collapsed, the leftbar-small menu will show.
+
+	.leftbar-small {
+		&.leftbar-collapsed .static-leftbar-wrapper {display: none;}
+		.static-leftbar {
+			position: fixed;
+			z-index: 323;
+		}
+		.leftbar {
+			position: relative;
+			.hide-on-small {display: none;}
+		}
+		.static-leftbar-wrapper {
+			&, & > div {
+				white-space: nowrap;
+				width: 96px;
+				overflow: visible;
+			}
+
+			nav > ul.acc-menu {
+				ul {
+					border-bottom-right-radius: 0;
+					border-left: medium none;
+				}
+
+				> li.hasChild {
+					&:hover {
+						overflow: visible!important;
+						> ul.acc-menu {
+							opacity: 1;
+							margin-left:0px;
+							height: auto!important;
+							display: block;
+							box-shadow: 0 0 1px rgba(27, 34, 44, 0.12), 0 16px 40px -8px rgba(27, 34, 44, 0.2);
+							li > a:before {right: 8px;}
+
+							li.hasChild {
+								> ul.acc-menu {
+									height: 0;
+								}
+								&.open > ul.acc-menu {
+									height: auto!important;
+								}
+							}
+						}
+					}
+					> ul.acc-menu {
+						display:none;
+					}
+					li ul.acc-menu {
+						/*height:auto!important;*/
+					}
+					li.open ul.acc-menu {
+						/*height: auto!important;*/
+					}
+					&>a {position: relative; &:extend(.clearfix all);}
+
+					&>a:before {.opacity(0.5);}
+
+					&>a:before {content: "\f3d3";}
+					&.open>a:before {content: "\f3d0";}
+
+					&>a:before, &.open>a:before, &.open>a:before {
+					  display: none;
+					}
+				}
+
+				> li.nav-separator {
+					border-style: solid; 
+					border-width: 2px 0 0 0;
+					text-align: center;
+					font-size: 0;
+					margin: 16px 0 0;
+					line-height: 0;
+					padding: 8px 0;
+				}
+				ul.acc-menu > li:hover > a, ul.acc-menu > li > a {
+					margin: 0 8px; border-radius: @border-radius-base; 
+					span.badge {
+						right: 32px!important;
+						left: auto;
+					}
+					&:hover {
+						padding-left: 8px; padding-right: 8px;
+						span.badge {
+							right: 32px!important;
+							left: auto;
+						}
+					}
+				}
+
+				> li.active > ul.acc-menu {border-width: 0;}
+				> li:first-child.nav-separator {display: none;}
+				> li > a > .text {font-size: @font-size-small; float: none;}
+
+				> li {
+					white-space: nowrap;
+					position: relative;
+					> a {padding: 16px;text-align: center;}
+					&, > a {
+						border-radius: 0;
+					}
+					span.text{
+						display: inline-block;
+						float: none;
+						line-height: 16px;
+						white-space: normal;
+						//font-size: @font-size-base;
+					}
+					span.icon{
+						display: block;
+						font-size: 24px;
+						height: 24px;
+						line-height: 24px;
+						margin-left: 0;
+						margin-right: 0;
+						text-align: center;
+						width: 24px;
+						float: none;
+						margin: 0 auto;
+					}
+					span.badge {
+						right: inherit !important;
+						left: 48px;
+						top: 12px;
+					}
+					span.label {
+						display: none;
+					}
+
+					&:hover {
+						z-index: @zindex-navbar - 1;
+						span.label {
+							display: inline;
+							right: 40px !important;
+						}
+						
+						>ul {
+							display: block;
+							position: absolute;
+							left: 96px;
+							top: 0;
+							width: 200px;
+							padding: 8px 0;
+							>li > a {padding-left: 8px; padding-right: 8px;}
+							>li li > a {padding-left: 32px!important; padding-right: 16px;}
+							>li li li > a {padding-left: 56px; padding-right: 16px;}
+							>li li li li > a {padding-left: 64px; padding-right: 16px;}
+						}
+					}
+
+					&.open-up:hover {
+						> ul {
+							bottom: 0;
+							top: auto;
+						}
+					}
+
+					&.active {
+						> ul {display: none !important;}
+						&:hover > ul {display: block !important;}
+					}
+				}
+			}
+		}
+	}
+
+// Leftbar scroll
+
+.leftbar.scroll-content{
+	bottom: 0;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	position: absolute;
+	right: -17px;
+	top: 0;
+	@media(max-width: @screen-lg){
+		right: 0;
+	}
+	&.commonWrapper{
+		position: relative;
+		overflow-y: auto;
+	}
+
+}
+	
+
+// Layout Horizontal
+	.layout-horizontal	{
+		// No Triggering Leftbar
+		@media(min-width: 767px){
+			#trigger-leftbar{
+				display: none;
+			}
+		}
+
+		.leftbar {
+			.widget + .widget {margin: 0}
+			.hide-on-horizontal {display: none;}
+		}
+
+		// Rearrange Layout
+		#wrapper {
+			display: block;
+			// overflow-x: hidden;
+			overflow: inherit;
+			#layout-static {
+				display: block;
+				.static-leftbar-wrapper {
+					display: block;
+					.static-leftbar {
+						display: block;
+					}
+				}
+				.static-content-wrapper {
+					display: block;
+				}
+			}
+		}
+
+		#widget-leftbar{
+			height: 72px;
+			// overflow-x: auto;
+			// overflow-y: hidden;
+			position: absolute;
+			width: 100%;
+			z-index: 1;
+			top: 56px;
+			ul.acc-menu{
+				list-style: none outside none;
+				margin: 0;
+				//width: 3000px;
+				white-space:nowrap;
+				//transition-duration: 800ms;
+				li.hasChild{
+					ul.acc-menu{
+						width: 256px;
+					}
+				}
+			}
+		}
+		
+		// Rearranging Leftbar into Horizontal Nav
+		.static-leftbar-wrapper {
+			.static-leftbar nav.widget-body>ul.acc-menu li.hasChild {
+				&>a:before, &.open>a:before, &.open>a:before {
+					display: none;
+				}
+			}
+
+			&, & > div {
+				white-space: nowrap;
+				width: auto;
+				overflow: visible;
+			}
+
+
+			nav > ul.acc-menu {
+				border-bottom: 1px solid @gray-200;
+				.widget nav.widget-body > ul.acc-menu > li > a{
+					border-right: none!important;
+				} 
+				ul {
+					border-bottom-right-radius: 0;
+					border-left: medium none;
+					&.acc-menu > li:hover > a, &.acc-menu > li > a { 
+						margin: 0 8px; 
+						border-radius: @border-radius-base; 
+						&:hover{padding-left: 8px; padding-right: 8px;}
+					}
+				}
+				li.hasChild:hover > ul{
+					box-shadow: 0 0 1px rgba(27, 34, 44, 0.12), 0 16px 40px -8px rgba(27, 34, 44, 0.2);
+				}
+				> li {
+					display: inline-block;
+					white-space: nowrap;
+					position: relative;
+					overflow: visible;
+					&:last-child, &:nth-last-child(2){
+						ul.acc-menu{
+							position: absolute;
+							left: auto;
+							right: 0;
+						}
+					}
+					&, > a {
+						border-radius: 0;	
+					}
+					> a {
+						padding: 16px;
+						text-align: center;
+						display: inline-block;
+						border-style: none;
+						border-width: 0 0 0 0!important;
+						> span.text {font-size: @font-size-small; float: none;}
+					}
+					span.icon{
+						display: block;
+						font-size: 24px;
+						height: 24px;
+						line-height: 24px;
+						margin-left: 0;
+						margin-right: 0;
+						text-align: center;
+						width: 24px;
+						float: none;
+						margin: 0 auto;
+					}
+					span.badge {
+						right: 16px!important;
+						left: inherit;
+						top: 12px;
+					}
+					span.label {
+						display: none;
+					}
+
+					ul.acc-menu {
+						width: 0px!important;
+						display:none;
+					}
+
+					&:hover {
+						z-index: 1512;
+						span.label {
+							display: inline;
+							right: 40px !important;
+						}
+						
+						>ul {
+							height: auto!important;
+							opacity: 1;
+							display: block;
+							position: absolute;
+							left: 0;
+							top: 72px;
+							width: 256px!important;
+							padding: 8px 0;
+							>li >a {padding-left: 8px; padding-right: 8px;}
+							>li li>a {padding-left: 32px; padding-right: 16px;}
+							>li li li>a {padding-left: 56px; padding-right: 16px;}
+							>li li li li>a {padding-left: 64px; padding-right: 16px;}
+						}
+					}
+
+					&.active {
+						a {
+							border-width: 2px 0 0 0!important;
+							padding-top: 14px!important;
+						}
+						> ul {
+							display: none !important;
+						}
+						&:hover {
+							> ul {display: block !important;top: 70px;}
+						}
+					}
+
+					&.open.active > a, &:hover.open.active >a {border-width: 2px 0 0 0 !important; border-style: solid; padding-top: 14px !important;}
+
+					&.nav-separator {display: none;}
+				}
+			}
+		}
+		footer{
+			position: relative !important;
+		}
+	}
+
+	// .leftbar{
+	// 	@media(max-width: @screen-xs-max){
+	// 		border-right: 1px solid @border-darker;
+	// 	}
+	// 	.media-list{
+	// 		.media{
+	// 			a{
+	// 				background: #1b222c;
+	// 				&:hover{
+	// 					background: #252f3d;
+	// 				}
+	// 				.media-body{
+	// 					&:hover{
+	// 						.leftbarname{
+	// 							color: #fff;
+	// 						}
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	@media(max-width: @screen-xs-max){
+		.layout-horizontal-ignored nav.navbar-fixed-top {
+			position: absolute !important;
+		}
+	}
+
+	

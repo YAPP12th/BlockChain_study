@@ -1,0 +1,136 @@
+/*
+ * Adding the animation to our element
+*/
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+/* bounce */
+@-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+    40% {-webkit-transform: translateY(-30px);}
+    60% {-webkit-transform: translateY(-15px);}
+} 
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+} 
+
+
+.bounce:hover {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+}
+
+
+/* pulse */
+@-webkit-keyframes pulse {
+    0% { -webkit-transform: scale(1); }
+    50% { -webkit-transform: scale(1.1); }
+    100% { -webkit-transform: scale(1); }
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+.pulse:hover {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+}
+
+
+/* flash */
+@-webkit-keyframes flash {
+    0%, 50%, 100% {opacity: 1;}
+    25%, 75% {opacity: 0;}
+}
+@keyframes flash {
+    0%, 50%, 100% {opacity: 1;}
+    25%, 75% {opacity: 0;}
+}
+.flash:hover {
+    -webkit-animation-name: flash;
+    animation-name: flash;
+}
+
+
+/* shake */
+@-webkit-keyframes shake {
+    0%, 100% {-webkit-transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
+}
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+.shake:hover {
+    -webkit-animation-name: shake;
+    animation-name: shake;
+}
+
+
+/* Scales */
+
+div.scales {
+	width:200px;
+	height:200px;
+	background-color:#FF00FF;
+    margin: 0 auto;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+}
+
+div.scaleOn {
+	/*General*/
+	transform: scale(1.2, 1.2);
+	/*Firefox*/
+	-moz-transform: scale(1.2, 1.2);
+	/*Microsoft Internet Explorer*/
+	-ms-transform: scale(1.2, 1.2);
+	/*Chrome, Safari*/
+	-webkit-transform: scale(1.2, 1.2);
+	/*Opera*/
+	-o-transform: scale(1.2, 1.2);
+	transition-duration: 1.5s;
+}
+
+div.scaleOff {
+	/*General*/
+	transform: scale(0.8, 0.8);
+	/*Firefox*/
+	-moz-transform: scale(0.8, 0.8);
+	/*Microsoft Internet Explorer*/
+	-ms-transform: scale(0.8, 0.8);
+	/*Chrome, Safari*/
+	-webkit-transform: scale(0.8, 0.8);
+	/*Opera*/
+	-o-transform: scale(0.8, 0.8);
+	transition-duration: 1.5s;
+}
+
+div.rotateAnticlock {
+	/* Rotate div */
+    -ms-transform: rotate(-360deg); /* IE 9 */
+    -webkit-transform: rotate(-360deg); /* Chrome, Safari, Opera */
+    transform: rotate(-360deg);
+    transition-duration: 1.5s;
+}
+
+div.rotateClock {
+	/* Rotate div */
+    -ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+    transform: rotate(360deg);
+    transition-duration: 1.5s;
+}

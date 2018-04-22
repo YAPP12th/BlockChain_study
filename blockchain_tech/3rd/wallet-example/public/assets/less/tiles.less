@@ -1,0 +1,623 @@
+//
+// Tiles
+// --------------------------------------------------
+
+//Basic Tile Styling
+
+	.tile-heading, .tile-body, .tile-footer {
+		&:extend(.clearfix all);
+		.transition(~"0.05s ease-in");
+	}
+
+	.info-tile, .shortcut-tile {
+		margin: 8px 0;
+		display: block;
+		border-radius: @border-radius-base;
+	}
+	a.info-tile, a.shortcut-tile, a.amazo-tile {background: none;}
+	.tile-body{
+		sup{
+			font-size: 50%;
+			top: -10px;
+		}
+	}
+
+// Info Tile
+
+	.info-tile {
+		margin-bottom: 24px;
+		
+		border-radius: 0;
+		.tile-heading {
+			letter-spacing: 0px;
+			padding: 8px 12px;
+			line-height: @line-height-small;
+			text-transform: uppercase;
+			text-align: center;
+			font-size: @font-size-small;
+			.border-top-radius(@border-radius-base);
+
+			.pull-right {
+				.transition(~"0.05s ease-in");	
+				color: rgba(255, 255, 255, 0.5);
+
+				.sparkline-block {
+					font-size: 0;
+					padding: 2px 0;
+				}
+			}
+
+			.title {
+				float: left !important;
+				letter-spacing: 2px;
+				text-transform: uppercase;
+			}
+			.secondary {
+				float: right !important;
+				letter-spacing: normal !important;
+				text-transform: none !important;
+			}
+		}
+		.tile-body {
+			font-size: @font-size-base;
+			padding: 16px;
+			line-height: 30px;
+			font-weight: 400;
+			span.icon{
+				text-align: center;
+				display: block;
+			}
+			span.text{
+				text-align: center;
+				display: block;
+				text-transform: uppercase;
+			}
+			.badge{
+				font-size: 11px;
+			    line-height: 16px;
+			    min-height: 16px;
+			    min-width: 16px;
+			    padding: 0 5px;
+			    vertical-align: top;
+			    color: rgba(255, 255, 255, 0.9) !important;
+			    background-color: rgba(0, 0, 0, 0.25);
+			}
+
+			.text-centered {
+				position: relative;
+				text-align: center;
+				i {
+					position: absolute;
+					margin: auto;
+					color: rgba(255, 255, 255, 0.25);
+					&:hover {color: rgba(255, 255, 255, 0.5)}
+				}
+				.info-text {
+					font-size: @font-size-h2;
+					height: 30px;
+					line-height: 30px;
+					color: #fff;
+				}
+				.info-text-bottom {
+					font-size: @font-size-small;
+					line-height: 16px;
+					height: 16px;
+					color: rgba(255, 255, 255, 0.75);
+				}
+			}
+
+			i {font-size: @font-size-h2; color: rgba(255, 255, 255, 0.5); .transition(~"0.05s ease-in");}
+			> i {position: absolute; font-size: @font-size-h2;}
+			div + small {font-size: @font-size-base; text-align: center; display: block; font-weight: 400; color: rgba(255, 255, 255, 0.75);}
+		}
+		.tile-footer {
+			color: #fff;
+			font-size: @font-size-small;
+			color: rgba(255, 255, 255, 0.5);
+			padding: 8px 12px;
+			border-bottom-right-radius: @border-radius-base;
+			border-bottom-left-radius: @border-radius-base;
+
+			.info-text{
+				font-size: 11px;
+			    line-height: 32px;
+			    padding: 0 12px;
+			    position: absolute;
+			    right: 0;
+			}
+			
+			.progress{
+				height: 32px;
+				margin: 0;
+				.progress-bar{
+					line-height: 20px;
+				}
+			}
+
+			.pull-right {
+				.sparkline-block {
+					font-size: 0;
+					padding: 2px 0;
+				}
+			}
+		}
+
+		&.has-footer { //Just remove the border-radius
+			.tile-body {
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+			.tile-footer {
+				border-bottom-right-radius: @border-radius-base;
+				border-bottom-left-radius: @border-radius-base;
+			}
+		}
+
+		&:hover {
+			i {color: #fff;}
+			text-decoration: none;
+			
+			.text-sparkline i {color: #fff}
+
+			.tile-footer {
+				.percent-change {color: #fff;}
+			}
+			.tile-heading .pull-right {color: #fff;}
+		}
+	}
+	//Mixin
+	.info-tile-variant(@color, @text-color) {
+		.tile-heading 	{background: @color;}
+		.tile-body 	{background: @color;}
+		.tile-body-alt {background: @color;}
+		.tile-footer 	{background: @color;}
+		color: @text-color !important;
+		border-top: 8px solid darken(@color,5%);
+		&:hover {
+			border-top: 8px solid darken(@color,5%);
+			.tile-heading 	{background: darken(@color,5%);}
+			.tile-body 	{background: darken(@color,5%);}
+			.tile-body-alt {background: darken(@color,5%);}
+			.tile-footer 	{background: darken(@color,5%);}
+			color: @text-color;
+		}
+
+
+		.progress {
+			background: #0f9fa7 !important;
+			border-bottom-right-radius: @border-radius-base;
+			border-bottom-left-radius: @border-radius-base;
+			.progress-bar {
+				background: #11ebf9 !important;
+				border-bottom-left-radius: @border-radius-base;
+			}
+		}
+	}
+
+	.info-tile {
+		&.tile-info 			{.info-tile-variant(@brand-info,#fff);}
+		&.tile-success 		{.info-tile-variant(@brand-success,#fff);}
+		&.tile-danger 			{.info-tile-variant(@brand-danger,#fff);}
+		&.tile-warning 		{.info-tile-variant(@brand-warning,#fff);}
+		&.tile-primary 		{.info-tile-variant(@brand-primary,#fff);}
+		&.tile-inverse 		{.info-tile-variant(@brand-inverse,#fff);}
+		&.tile-midnightblue 	{.info-tile-variant(@brand-midnightblue,#fff)}
+		&.tile-sky 			{.info-tile-variant(@brand-teal,#fff);}
+		&.tile-orange 			{.info-tile-variant(@brand-orange,#fff)}; 
+		&.tile-indigo 			{.info-tile-variant(@brand-indigo,#fff)}; 
+		&.tile-green 			{.info-tile-variant(@brand-green,#fff);}
+		&.tile-blue 			{.info-tile-variant(@brand-blue,#fff);}
+		&.tile-magenta  		{.info-tile-variant(@brand-pink,#fff);}
+		&.tile-purple  		{.info-tile-variant(@brand-purple,#fff);}
+		&.tile-brown  			{.info-tile-variant(@brand-brown,#fff);}
+		&.tile-grape			{.info-tile-variant(@brand-lime,#fff);}
+		&.tile-toyo			{.info-tile-variant(@brand-amber,#fff);}
+		&.tile-alizarin		{.info-tile-variant(@brand-deeporange,#fff);}
+		&.tile-facebook		{.info-tile-variant(@brand-facebook,#fff);}
+		&.tile-twitter			{.info-tile-variant(@brand-twitter,#fff);}
+		&.tile-dribbble		{.info-tile-variant(@brand-dribbble,#fff);}
+		&.tile-vimeo			{.info-tile-variant(@brand-vimeo,#fff);}
+		&.tile-white        {.info-tile-variant(@gray-75,@gray-900);}
+	}
+
+// Sparkline Tile
+	.tile-sparkline {
+		background: #fff;
+		border: 1px solid @border-darker;
+		border-radius: @border-radius-base;
+		position: relative;
+		margin-bottom: 24px;
+
+		.tile-sparkline-heading {
+			padding: 16px;
+			h2 {
+				font-size: @font-size-h2;
+				margin: 0;
+				font-weight: 400;
+				float: none;
+			}
+			.tile-sparkline-subheading {
+				margin: 8px 0 0;
+				float: none;
+				line-height: 1em;
+				color: @gray;
+				font-weight: 400;
+				font-size: @font-size-small;
+			}
+			.label {
+				position: absolute;
+				top: 16px;
+				right: 16px;
+			}
+			.week {
+				position: absolute;
+				top: 48px;
+				float: none;
+				right: 16px;
+				text-transform: none !important;
+				color: @gray-light !important;
+				font-size: @font-size-small;
+				i {font-size: @font-size-small !important;}
+
+			}
+		}
+		.tile-sparkline-body {
+			padding: 24px;
+
+			.tabular {
+				margin: 8px 0 0;
+				padding: 0 4px;
+				.tabular-cell {
+					width: 14.285714285714285714285714285714%;
+
+					.week-day {
+						color: @gray-lighter;
+						font-size: @font-size-small;
+						position: relative;
+					}
+					.sun {margin-left: -2px; left: 0}
+					.mon {margin-left: -3px; left: 16.67%}
+					.tue {margin-left: -4px; left: 33.33%}
+					.wed {margin-left: -4px; left: 50%}
+					.thu {margin-left: -4px; left: 66.67%}
+					.fri {margin-left: -4px; left: 83.33%}
+					.sat {margin-left: -4px; left: 100%}
+				}
+			}
+
+		}
+		.tile-sparkline-footer {
+			padding: 16px;
+			background: @gray-50;
+			font-size: @font-size-small;
+			border-top: 1px solid @border-lighter;
+			border-radius: 0 0 @border-radius-base @border-radius-base;
+		}
+	}
+
+// Addons to Tiles
+
+
+	//EasyPieChart in Tile
+		.info-tile .tile-body .easypiechart {
+			margin: 0 auto;
+			height: 80px;
+			line-height: 80px;
+			width: 80px;
+
+			.percent {
+				width: 80px;
+				line-height: 80px;
+				font-size: @font-size-large;
+				font-weight: 400;
+				text-transform: uppercase;
+				color: #fff;
+			}
+		}
+
+
+	// Sparkline in Body
+		.info-tile .tile-body {
+			.sparkline {width: 96px; margin: 0 auto; padding: 0px;}
+			.text-centered {
+				.info-sparkline {
+					font-size: 0;
+					margin: 16px 0;
+				}
+			}
+		}
+
+
+	// Progressbar in Footer
+		//Style
+		.info-tile .tile-footer.tile-progressbar {
+			padding: 0 !important;
+			height: 32px !important;
+			position: relative;
+			border-radius: 0 0 @border-radius-base @border-radius-base;
+			.progress {
+				height: 32px;
+				border-radius: 0 0 @border-radius-base @border-radius-base;
+			}
+			span {
+				padding: 0 12px;
+				height: 32px;
+				line-height: 32px;
+				position: absolute;
+				&.progress-text-left {left: 0;}
+				&.progress-text-right {right: 0;}
+			}
+		}
+
+		//Mixin
+		.tile-progressbar-variant(@filled, @unfilled, @text-color:#fff) {
+			.tile-footer.tile-progressbar.progress {
+				background: @unfilled !important;
+				.progress-bar {background: @filled !important}
+
+				span {
+					color: @text-color;
+				}
+			}
+		}
+
+		.info-tile {
+			&.tile-info {.tile-progressbar-variant(@cyan-A400,@cyan-700);}
+
+		}
+
+
+		// Sparkline in Footer
+			//Style
+			.info-tile .tile-footer.tile-sparklines {
+				padding: 0 !important;
+				position: relative;
+				border-bottom-right-radius: @border-radius-base;
+				border-bottom-left-radius: @border-radius-base;
+				.peity {
+					width: 100% !important;
+					border-bottom-right-radius: @border-radius-base !important;
+		    		border-bottom-left-radius: @border-radius-base !important;
+				}
+				span {
+					padding: 0 8px;
+					height: 32px;
+					line-height: 32px;
+					position: absolute;
+					
+					&.spark-text-left {left: 0;}
+					&.spark-text-right {right: 0px;}
+				}
+			}
+
+			//Mixin
+			.tile-sparkline-variant(@text-color:#fff) {
+				.tile-footer.tile-sparklines {
+					span {
+						color: @text-color;
+					}
+				}
+			}
+
+			.info-tile[class*="tile-"] { //all tile
+				.tile-sparkline-variant();
+			}
+	
+
+// Alt tile Variant with only one color
+	.info-tile.tile-alt {
+		&.tile-info 			{.one-color-tile-variant(@brand-info, darken(@brand-info, 20%)) 			;}
+		&.tile-white 			{.one-color-tile-variant(@gray-900, darken(@brand-info, 20%)) 			    ;}
+		&.tile-success 			{.one-color-tile-variant(@brand-success, darken(@brand-info, 20%)) 			;}
+		&.tile-danger 			{.one-color-tile-variant(@brand-danger, darken(@brand-info, 20%)) 			;}
+		&.tile-warning 			{.one-color-tile-variant(@brand-warning, darken(@brand-info, 20%)) 			;}
+		&.tile-primary 			{.one-color-tile-variant(@brand-primary, darken(@brand-info, 20%)) 			;}
+		&.tile-inverse 			{.one-color-tile-variant(@brand-inverse, darken(@brand-info, 20%)) 			;}
+		&.tile-midnightblue 	{.one-color-tile-variant(@brand-midnightblue, darken(@brand-info, 20%)) 	;}
+		&.tile-sky 				{.one-color-tile-variant(@brand-teal, darken(@brand-info, 20%)) 			;}
+		&.tile-orange 			{.one-color-tile-variant(@brand-orange, darken(@brand-info, 20%)) 			;}
+		&.tile-indigo 			{.one-color-tile-variant(@brand-indigo, darken(@brand-info, 20%)) 			;}
+		&.tile-green 			{.one-color-tile-variant(@brand-green, darken(@brand-info, 20%)) 			;}
+		&.tile-blue 			{.one-color-tile-variant(@brand-blue, darken(@brand-info, 20%)) 			;}
+		&.tile-magenta  		{.one-color-tile-variant(@brand-pink, darken(@brand-info, 20%)) 			;}
+		&.tile-purple  			{.one-color-tile-variant(@brand-purple, darken(@brand-info, 20%)) 			;}
+		&.tile-brown  			{.one-color-tile-variant(@brand-brown, darken(@brand-info, 20%)) 			;}
+		&.tile-grape			{.one-color-tile-variant(@brand-lime, darken(@brand-info, 20%)) 			;}
+		&.tile-toyo				{.one-color-tile-variant(@brand-amber, darken(@brand-info, 20%)) 			;}
+		&.tile-alizarin			{.one-color-tile-variant(@brand-deeporange, darken(@brand-info, 20%)) 		;}
+		&.tile-facebook			{.one-color-tile-variant(@brand-facebook, darken(@brand-info, 20%)) 		;}
+		&.tile-twitter			{.one-color-tile-variant(@brand-twitter, darken(@brand-info, 20%)) 			;}
+		&.tile-dribbble			{.one-color-tile-variant(@brand-dribbble, darken(@brand-info, 20%)) 		;}
+		&.tile-vimeo			{.one-color-tile-variant(@brand-vimeo, darken(@brand-info, 20%)) 			;}
+	}
+
+	.one-color-tile-variant(@color, @hovercolor) {
+		.tile-heading, .tile-body, .tile-footer {background: @color !important;}
+		&:hover {
+			.tile-heading, .tile-body, .tile-footer {background: @hovercolor;}
+		}
+	}
+
+
+
+
+
+
+
+// Tectonic Info Tiles
+
+.tectonic-info-tile {
+	display: block;
+	padding: 16px;
+	margin-bottom: 16px;
+	border-radius: @border-radius-base;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+	.tile-heading {
+		margin-bottom: 16px;
+		.title {
+			float: left;
+			font-size: @font-size-base;
+			line-height: 16px;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+	}
+	.tile-body {
+		.text {
+			font-size: @font-size-h2;
+			font-weight: 700;
+			line-height: 40px;
+			float: left;
+			sup {
+				font-size: 50%;
+				top: -12px;
+			}
+		}
+		.sparkline {
+			float: right;
+			.bar {}
+			.line {}
+			.pie {}
+		}
+		.icon {
+			float: right;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 32px;
+			text-align: center;
+		}
+	}
+	.tile-footer {
+		margin-top: 16px;
+		.text-small {
+			font-size: @font-size-small;
+			line-height: 16px;
+			float: left;
+		}
+		.percent {
+			font-size: @font-size-small;
+			line-height: 16px;
+			float: right;
+		}
+	}
+}
+
+.tectonic-info-tile-variant(@bg-color, @title-color, @text-color, @text-small-color, @percent-color) {
+	background-color: @bg-color;
+	.tile-heading {
+		.title {color: @title-color;}
+	}
+	.tile-body {
+		.text {color: @text-color;}
+		.icon {color: @text-color;}
+	}
+	.tile-footer {
+		.text-small {color: @text-small-color;}
+		.percent {color: @percent-color;}
+	}
+}
+
+.tectonic-info-tile {
+	&.white {.tectonic-info-tile-variant(#fff, @gray, @gray-darker, @gray-light, @gray-light);}
+	&.primary {.tectonic-info-tile-variant(@light-blue-500, @light-blue-200, #fff, @light-blue-900, @light-blue-200);}
+	&.info {.tectonic-info-tile-variant(@cyan-500, @cyan-200, #fff, @cyan-900, @cyan-200);}
+	&.success {.tectonic-info-tile-variant(@light-green-500, @light-green-200, #fff, @light-green-900, @light-green-200);}
+	&.teal {.tectonic-info-tile-variant(@teal-500, @teal-200, #fff, @teal-900, @teal-200);}
+	&.danger {.tectonic-info-tile-variant(@red-500, @red-200, #fff, @red-900, @red-200);}
+	&.warning {.tectonic-info-tile-variant(@yellow-600, @yellow-100, #fff, @yellow-900, @yellow-100);}
+	&.inverse {.tectonic-info-tile-variant(@gray-500, @gray-200, #fff, @gray-900, @gray-200);}
+	&.brown {.tectonic-info-tile-variant(@brown-500, @brown-200, #fff, @brown-900, @brown-200);}
+	&.indigo {.tectonic-info-tile-variant(@indigo-500, @indigo-200, #fff, @indigo-900, @indigo-200);}
+	&.deep-purple {.tectonic-info-tile-variant(@deep-purple-500, @deep-purple-200, #fff, @deep-purple-900, @deep-purple-200);}
+	&.orange {.tectonic-info-tile-variant(@orange-500, @orange-200, #fff, @orange-900, @orange-200);}
+	&.blue-gray {.tectonic-info-tile-variant(@blue-gray-500, @blue-gray-200, #fff, @blue-gray-900, @blue-gray-200);}
+	&.pink {.tectonic-info-tile-variant(@pink-500, @pink-200, #fff, @pink-900, @pink-200);}
+	&.purple {.tectonic-info-tile-variant(@purple-500, @purple-200, #fff, @purple-900, @purple-200);}
+	&.green {.tectonic-info-tile-variant(@green-500, @green-200, #fff, @green-900, @green-200);}
+	&.lime {.tectonic-info-tile-variant(@lime-500, @lime-100, #fff, @lime-900, @lime-100);}
+	&.amber {.tectonic-info-tile-variant(@amber-500, @amber-100, #fff, @amber-900, @amber-100);}
+	&.deep-orange {.tectonic-info-tile-variant(@deep-orange-500, @deep-orange-200, #fff, @deep-orange-900, @deep-orange-200);}
+	&.blue {.tectonic-info-tile-variant(@blue-500, @blue-200, #fff, @blue-900, @blue-200);}
+}
+
+// Tectonic Shortcut Tiles
+
+.tectonic-shortcut-tile {
+	display: block;
+	padding: 16px;
+	border-width: 8px 0 0 0;
+	border-style: solid;
+	border-radius: @border-radius-base;
+	margin-bottom: 16px;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+	.icon {
+		display: block;
+		line-height: 40px;
+		font-size: 32px;
+		text-align: center;
+		margin-bottom: 8px;
+	}
+	.title {
+		font-size: @font-size-base;
+		text-transform: uppercase;
+		display: block;
+		line-height: 16px;
+		text-align: center;
+		font-weight: 600;
+	}
+	&.alt:hover {background-color: #fff !important}
+}
+
+.tectonic-shortcut-tile-variant(@bg-color, @border-color, @icon-color, @title-color) {
+	background-color: @bg-color;
+	border-color: @border-color;
+	.icon {color: @icon-color}
+	.title {color: @title-color}
+	&:hover {background-color: @border-color}
+}
+
+.tectonic-shortcut-tile {
+	// full color
+	&.primary {.tectonic-shortcut-tile-variant(@light-blue-500, @light-blue-700, @light-blue-200, #fff)}
+	&.teal {.tectonic-shortcut-tile-variant(@teal-500, @teal-700, @teal-200, #fff)}
+	&.info {.tectonic-shortcut-tile-variant(@cyan-500, @cyan-700, @cyan-200, #fff)}
+	&.success {.tectonic-shortcut-tile-variant(@light-green-500, @light-green-700, @light-green-200, #fff)}
+	&.pink {.tectonic-shortcut-tile-variant(@pink-500, @pink-700, @pink-200, #fff)}
+	&.indigo {.tectonic-shortcut-tile-variant(@indigo-500, @indigo-700, @indigo-200, #fff)}
+	&.orange {.tectonic-shortcut-tile-variant(@orange-500, @orange-700, @orange-200, #fff)}
+	&.inverse {.tectonic-shortcut-tile-variant(@gray-600, @gray-700, @gray-200, #fff)}
+	&.warning {.tectonic-shortcut-tile-variant(@yellow-650, @yellow-800, @yellow-200, #fff)}
+	&.danger {.tectonic-shortcut-tile-variant(@red-500, @red-700, @red-200, #fff)}
+	&.brown {.tectonic-shortcut-tile-variant(@brown-600, @brown-700, @brown-200, #fff)}
+	&.deep-purple {.tectonic-shortcut-tile-variant(@deep-purple-500, @deep-purple-700, @deep-purple-200, #fff)}
+	&.blue-gray {.tectonic-shortcut-tile-variant(@blue-gray-600, @blue-gray-700, @blue-gray-200, #fff)}
+	&.purple {.tectonic-shortcut-tile-variant(@purple-500, @purple-700, @purple-200, #fff)}
+	&.green {.tectonic-shortcut-tile-variant(@green-550, @green-700, @green-200, #fff)}
+	&.lime {.tectonic-shortcut-tile-variant(@lime-600, @lime-750, @lime-200, #fff)}
+	&.amber {.tectonic-shortcut-tile-variant(@amber-500, @amber-750, @amber-200, #fff)}
+	&.deep-orange {.tectonic-shortcut-tile-variant(@deep-orange-500, @deep-orange-700, @deep-orange-200, #fff)}
+	&.blue {.tectonic-shortcut-tile-variant(@blue-500, @blue-700, @blue-200, #fff)}
+	
+	// alt styles
+	&.alt.primary {.tectonic-shortcut-tile-variant(#fff, @light-blue-200, @light-blue-500, @gray-darker)}
+	&.alt.teal {.tectonic-shortcut-tile-variant(#fff, @teal-200, @teal-500, @gray-darker)}
+	&.alt.info {.tectonic-shortcut-tile-variant(#fff, @cyan-200, @cyan-500, @gray-darker)}
+	&.alt.success {.tectonic-shortcut-tile-variant(#fff, @light-green-200, @light-green-500, @gray-darker)}
+	&.alt.pink {.tectonic-shortcut-tile-variant(#fff, @pink-200, @pink-500, @gray-darker)}
+	&.alt.indigo {.tectonic-shortcut-tile-variant(#fff, @indigo-200, @indigo-500, @gray-darker)}
+	&.alt.orange {.tectonic-shortcut-tile-variant(#fff, @orange-200, @orange-500, @gray-darker)}
+	&.alt.inverse {.tectonic-shortcut-tile-variant(#fff, @gray-200, @gray-500, @gray-darker)}
+	&.alt.warning {.tectonic-shortcut-tile-variant(#fff, @yellow-300, @yellow-600, @gray-darker)}
+	&.alt.danger {.tectonic-shortcut-tile-variant(#fff, @red-200, @red-500, @gray-darker)}
+	&.alt.brown {.tectonic-shortcut-tile-variant(#fff, @brown-200, @brown-500, @gray-darker)}
+	&.alt.deep-purple {.tectonic-shortcut-tile-variant(#fff, @deep-purple-200, @deep-purple-500, @gray-darker)}
+	&.alt.blue-gray {.tectonic-shortcut-tile-variant(#fff, @blue-gray-200, @blue-gray-500, @gray-darker)}
+	&.alt.purple {.tectonic-shortcut-tile-variant(#fff, @purple-200, @purple-500, @gray-darker)}
+	&.alt.green {.tectonic-shortcut-tile-variant(#fff, @green-200, @green-500, @gray-darker)}
+	&.alt.lime {.tectonic-shortcut-tile-variant(#fff, @lime-200, @lime-500, @gray-darker)}
+	&.alt.amber {.tectonic-shortcut-tile-variant(#fff, @amber-200, @amber-500, @gray-darker)}
+	&.alt.deep-orange {.tectonic-shortcut-tile-variant(#fff, @deep-orange-200, @deep-orange-500, @gray-darker)}
+	&.alt.blue {.tectonic-shortcut-tile-variant(#fff, @blue-200, @blue-500, @gray-darker)}
+}
+

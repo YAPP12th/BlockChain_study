@@ -1,0 +1,40 @@
+
+
+.examples {
+    text-align:center;
+}
+.examples .intro {
+    margin-bottom: 3em;
+    line-height: 1.4em;
+    font-size: 16px;
+    text-align: left;
+}
+.examples .intro h1 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.examples .outro {
+    display: block;
+    text-align: right;
+    margin-top: 3em;
+}
+.examples section {
+    display: inline-block;
+    width: 24%;
+    min-width: 160px;
+    margin-bottom: 2em;
+    text-align: center;
+    vertical-align: top;
+}
+.examples section h4 {
+    color: #bbb;
+    font-weight: normal;
+}
+
+
+
+
+
+
+

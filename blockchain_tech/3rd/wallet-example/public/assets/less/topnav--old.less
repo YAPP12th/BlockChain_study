@@ -1,0 +1,485 @@
+// Topnav Header Styles
+// --------------------------------------------------------------------------
+// There are two kinds of Dropdowns
+// - The "Normal" ones which extend from the Bootstrap Menu
+// - The "Alternate" ones which are used in messages, in notifications, etc. (.dropdown-alternate)
+
+
+
+/* Logo Positionings */
+#topnav {
+	.navbar-header {float: left;}
+	.logo-large();
+}
+
+body.leftbar-collapsed {
+	.logo-small();
+}
+
+@media (max-width: @screen-xs) {
+	.logo-small();
+}
+
+
+// Logo Positioning Helper
+.logo-small {
+	#topnav .navbar-header {
+		width: 48px;
+		.navbar-brand {
+			background: url(../img/logo.png) no-repeat left top;
+		}
+	}
+}
+
+.logo-large {
+	.navbar-header {
+		width: 256px;
+		.navbar-brand {
+			background: url(../img/logo.png) no-repeat -48px top;
+		}
+	}
+}
+
+
+
+/* Drop Downs */
+
+nav.navbar {margin-bottom: 0;}
+
+#topnav {
+	margin-bottom:0px;
+	border:none;
+	box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.08), 0px 2px 0px 0px rgba(0, 0, 0, 0.02);
+	.dropdown-menu > li > a {padding: 6px 16px !important;}
+	.navbar-nav {
+		.open .dropdown-menu {position: absolute;} //Keep topnav toolbar from collapsing even in small screens
+		.dropdown-toggle  {font-size:@font-size-base;}
+		&.toolbar {
+			margin: 0;
+			>li {
+				float: left;
+				margin-right: 8px;
+				&:last-child {margin-right: 0;}
+				> a {padding: 14px 16px; }
+			}
+		}
+	}
+
+	// Trigger Styles
+		#trigger-leftbar a {float: left;}
+		#trigger-infobar a {float: right;}
+
+		.toolbar-trigger {
+			a {
+				padding: 8px;
+				span.icon-bg {
+					display: block;
+					border-radius: @border-radius-base;
+					padding: 8px;
+				    font-size: @icon-font-size-base;
+				    line-height: 24px;
+				    text-align: center;
+				    height: 40px;
+				    width: 40px;
+				}
+			}
+		}
+
+	// Toolbar Icon BG
+		.toolbar.pull-right li.toolbar-icon-bg > a {
+			padding: 8px 0;
+			span.icon-bg {
+				display: block;
+				border-radius: @border-radius-base;
+				padding: 8px;
+			    font-size: @icon-font-size-base;
+			    line-height: 24px;
+			    text-align: center;
+			    height: 40px;
+			    width: 40px;
+			}
+		}
+		.toolbar.pull-right li.toolbar-icon-bg:hover {
+		}
+
+	// Alternate Headers
+
+		.toolbar .dropdown-menu.dropdown-alternate {
+			background: #fff !important;
+			color: @gray !important;
+			padding: 0;
+			z-index: 1300;
+			box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+			border-top-left-radius: @border-radius-base !important;
+			border-top-right-radius: @border-radius-base !important;
+			border: 1px solid @dropdown-border;
+
+			width: 298px;
+
+			@media (max-width: 480px ) {
+				width: 298px !important;
+			}
+
+			.dd-header, .dd-footer {
+				line-height: 16px;
+				a {color: @link-color;}
+			}
+
+			.dd-header {
+				padding: 8px 12px; .clearfix; font-size: @font-size-small; border-bottom: 1px solid @border-darker; box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.04);
+				span:first-child {.pull-left; font-weight: 400; text-transform: uppercase; letter-spacing: 2px;}
+				span:last-child {
+					.pull-right;
+					a {padding: 0 !important;}
+				}
+				a {background: none !important}
+				a:hover {color: @link-hover-color}
+			}
+			.dd-footer {
+				font-size: @font-size-small; padding: 8px 12px; text-align: right; border-top: 1px solid @border-darker; box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.04);
+			}
+
+			ul {.list-unstyled();}
+
+			.scrollthis {
+				&:extend(.scrollbar-custom all);
+				width: 296px;
+				height: 288px;
+				li {
+				     &:extend(.clearfix all);
+				     a {display: block; text-decoration: none;}
+				}
+			}
+
+			.scroll-content a {
+				white-space: normal; color: @gray-dark !important;
+				&.active, &:hover {
+					color: @gray-dark !important;
+					.rgba(black,0.02) !important;
+
+					.box-shadow(~"0 1px 0 0 rgba(0,0,0,0.02), 0 -1px 0 0 rgba(0,0,0,0.02)");
+					.time{color: @gray-light}}
+			}
+
+			li {
+				border-bottom: 1px solid @gray-200;
+
+				.time {color: @gray-lighter; font-size: @font-size-small; white-space: nowrap; text-align: right; vertical-align: top;}
+				a:focus {background-color: #fff !important;}
+
+			}
+		}
+
+	// Individual Header Styles
+		.toolbar .dropdown-menu {
+			&.taskprogresses, .tab-pane.taskprogresses {
+				li {
+					.progress {height: 4px; margin-top: 6px;} .progress-title {color: @gray-dark; font-weight: 700;} .progress-desc {color: @gray;} .progress-percentage {color: @gray;}
+					&.new {
+						.rgba(@brand-info, 0.01);
+					}
+					a {
+						padding: 15px;
+					}
+				}
+			}
+
+
+			&.notifications, .tab-pane.notifications {
+
+				ul li {
+					width: 100%;
+
+					.notification-success 		.notification-icon {background: @light-green-50; border-color: @light-green-50; color: @brand-success;}
+				 	.notification-primary   	.notification-icon {background: @light-blue-50; border-color: @light-blue-50; color: @brand-primary;}
+				 	.notification-danger    	.notification-icon {background: @red-50; border-color: @red-50; color: @brand-danger;}
+				 	.notification-warning   	.notification-icon {background: @yellow-50; border-color: @yellow-50; color: @brand-warning;}
+				 	.notification-inverse   	.notification-icon {background: @gray-50; border-color: @gray-50; color: @brand-inverse;}
+				 	.notification-info      	.notification-icon {background: @cyan-50; border-color: @cyan-50; color: @brand-info;}
+				 	.notification-midnightblue  .notification-icon {background: @blue-gray-50; border-color: @blue-gray-50; color: @brand-midnightblue;}
+
+					&:hover {
+						.notification-success    .notification-icon {background: @brand-success !important; border-color: @brand-success; color: #fff;}
+					 	.notification-primary    .notification-icon {background: @brand-primary !important; border-color: @brand-primary; color: #fff;}
+					 	.notification-danger     .notification-icon {background: @brand-danger !important; border-color: @brand-danger; color: #fff;}
+					 	.notification-warning    .notification-icon {background: @brand-warning !important; border-color: @brand-warning; color: #fff;}
+					 	.notification-inverse    .notification-icon {background: @brand-inverse !important; border-color: @brand-inverse; color: #fff;}
+					 	.notification-info    	 .notification-icon {background: @brand-info !important; border-color: @brand-info; color: #fff;}
+					 	.notification-midnightblue .notification-icon {background: @brand-midnightblue !important; border-color: @brand-midnightblue; color: #fff;}
+					}
+
+					&.new {
+						.rgba(@brand-info, 0.01);
+					}
+
+					a {
+						width: 100%;
+						height: 100%;
+						display: table;
+						&:extend(.clearfix all);
+						padding: 16px 40px 16px 64px;
+						position: relative;
+
+						.notification-icon {
+							position: absolute !important;
+							left: 16px;
+							top: 16px;
+
+							width: 32px;
+							height: 32px;
+							border-width: 0px;
+							border-style: solid;
+							position: relative;
+							text-align: center;
+							border-radius: 50%;
+							line-height: 32px;
+						}
+
+						.notification-content {
+							vertical-align: middle;
+							display: table-cell;
+							height: 32px;
+						}
+
+						.notification-time {
+							display: inline;
+							font-size: @font-size-small;
+							color: @gray-lighter;
+							float: right;
+							text-align: right;
+							line-height: 16px;
+							position: absolute !important;
+							right: 16px;
+							top: 16px;
+						}
+						&:hover {.notification-time{color: @gray-light}}
+					}
+				}
+			}
+
+			&.messages, .tab-pane.messages {
+				ul li {
+					&.new {.rgba(@brand-info,0.01);}
+
+					a {
+						&:extend(.clearfix all);
+						padding: 16px 40px 16px 64px;
+						position: relative;
+
+						img.msg-avatar {
+							position: absolute !important;
+							left: 16px;
+							top: 16px;
+
+							height: 32px;
+							width: 32px;
+
+							border-radius: 50%;
+						}
+
+						.msg-content {
+							min-height: 40px;
+							.msg {
+								display: block;
+								font-size: @font-size-base;
+								color: @gray;
+								width: 100%;
+								float: left;
+							}
+
+							.name {
+								display: block;
+								width: 100%;
+								float: left;
+								font-weight: 700;
+								color: @gray-dark;
+								i.attachment {color: @gray-light; margin-left: 8px;}
+							}
+						}
+
+						.msg-time {
+							position: absolute !important;
+							top: 16px;
+							right: 16px;
+							line-height: 16px;
+							font-size: @font-size-small;
+							color: @gray-lighter;
+						}
+						&:hover .msg-time {color: @gray-light}
+					}
+				}
+			}
+
+			&.userinfo {
+				padding: 8px 0px;
+				min-width: 200px;
+				box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.08);
+				border: 1px solid @border-darker;
+				border-radius: @border-radius-base !important;
+				background: #fff !important;
+				li {
+					&.divider {border-bottom: @border-lighter !important;}
+					a {
+						color: @gray-dark;
+						&:extend(.clearfix all);
+						i, span {line-height: 20px;}
+						i {
+							color: @gray-lighter;
+							margin-left: 0;
+							min-width: 16px;
+							text-align: center;
+						}
+						span.badge {
+							line-height: 16px;
+							top: inherit;
+							right: 16px;
+							margin-top: 2px;
+						}
+						&:hover {
+							background: @gray-50 !important;
+							color: @gray-darker !important;
+						}
+					}
+				}
+			}
+			&.search .input-group {padding: 15px;}
+		}
+
+	// Buttons in Dropdown Tabs
+		.dropdown-tab-btns {
+			border-bottom: 1px solid @border-darker;
+			box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06);
+			padding: 7px 10px;
+		}
+
+	// The toggle links for left/right leftbar
+		.btn.pull-left {border-right: 1px solid #555; margin-right: 10px;}
+		.btn.pull-right {border-left: 1px solid #555; margin-left: 10px}
+
+
+		// Username
+			a.username {
+				
+			}
+
+
+		//Language Switcher
+			.language-switcher {
+				.dropdown-menu {
+					border-radius: @border-radius-base !important;
+					background: #fff !important;
+					color: @gray !important;
+					padding: 0;
+					z-index: 1300;
+					border: 1px solid @border-darker !important;
+					box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1) !important;
+					width: 192px !important;
+					ul {
+						padding: 0px 0;
+						.list-unstyled();
+						li {
+							border-bottom: 1px solid @border-lighter;
+							&:last-child {border-bottom: none;}
+							a {
+								font-size: @font-size-small;
+								color: @gray-dark !important;
+								display: block;
+								padding: 8px 15px;
+								text-decoration: none;
+								img {margin-right: 8px; margin-top: -3px;}
+								&:hover {
+									background: rgba(0, 0, 0, 0.03) !important;
+									color: @gray-darker !important;}
+							}
+						}
+					}
+				}
+				img {width: 18px; margin-top: -4px;}
+			}
+
+}
+
+
+// Nav and leftbar Badges
+
+
+.nav .badge, .leftbar nav.widget-body>ul.acc-menu .badge {
+	text-align: center;
+	text-shadow: none !important;
+}
+
+.nav .badge {
+	top: 4px;
+	right: -4px;
+	position: absolute;
+
+	//background-color: @brand-danger;
+}
+
+.leftbar nav.widget-body>ul.acc-menu .badge {
+	float: right;
+	position: absolute;
+  	right: 30px;
+}
+
+
+// Alignments of dropdowns in small screen manually so it centers
+//-------------------------------
+
+@media (max-width: @screen-md) {
+	#topnav .open .dropdown-menu {
+		position: static !important;
+	}
+}
+
+	@media (max-width: @screen-xs-max) {
+		.dropdown-menu.messages {
+			margin-right: -35px;
+			&:before, &:after {margin-right: 35px;}
+		}
+		.dropdown-menu.notifications {
+			margin-right: -80px;
+			&:before, &:after {margin-right: 80px;}
+		}
+
+		.dropdown-menu.taskprogresses {
+			margin-right: -85px;
+			&:before, &:after {margin-right: 85px;}
+		}
+
+		.dropdown-menu.search {
+			margin-right: -93px;
+			&:before, &:after {margin-right: 93px;}
+		}
+
+		// Menu Horizontal
+		nav.navbar .open .dropdown-menu {
+			position: relative;
+			float: none;
+			background: none;
+			.box-shadow(~"none");
+			border: 0;
+		}
+		nav.navbar .navbar-header {width: auto;}
+
+		#topnav.navbar-default .yamm .dropdown-menu {
+			border: 0;
+			left: 0!important;
+			right: 0;
+		}
+	}
+
+// Headerbar
+#headerbar {
+	top: -1000px;
+	left: 0;
+	position: fixed;
+	padding: 20px 10px 0;
+	z-index: 9999;
+	width: 100%;
+	background-color: #000;
+	background-color: rgba(0, 0, 0, 0.86);
+	-webkit-transition: top .25s ease;
+	-o-transition: top .25s ease;
+	transition: top .25s ease;
+}

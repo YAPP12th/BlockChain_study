@@ -1,0 +1,226 @@
+<head>
+  <meta charset="utf-8">
+  <title>Test Wallet</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="description" content="Tectonic Admin Theme">
+  <meta name="author" content="KaijuThemes">
+
+  <link href="https://fonts.googleapis.com/css?family=Asap:300,400,400italic,600,600italic,700" rel="stylesheet" type="text/css">
+
+  <!--[if lt IE 10]>
+        <script type="text/javascript" src="assets/js/media.match.min.js"></script>
+        <script type="text/javascript" src="assets/js/placeholder.min.js"></script>
+    <![endif]-->
+
+  <link type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link type="text/css" href="assets/fonts/ionicons/css/ionicons.css" rel="stylesheet">
+  <!-- Themify Icons -->
+  <link type="text/css" href="assets/fonts/elegant-icons/css/style.css" rel="stylesheet">
+  <!-- Ion Icons -->
+  <link type="text/css" href="assets/css/styles.css" rel="stylesheet">
+  <!-- Core CSS with all styles -->
+
+  <!--<link type="text/css" href="assets/plugins/jstree/dist/themes/tectonic/style.min.css" rel="stylesheet"> -->
+  <!-- jsTree -->
+  <link type="text/css" href="assets/plugins/codeprettifier/prettify.css" rel="stylesheet">
+  <!-- Code Prettifier -->
+  <link type="text/css" href="assets/plugins/iCheck/skins/minimal/blue.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link type="text/css" href="assets/plugins/wijets/wijets.css" rel="stylesheet">
+  <!-- Wijets -->
+  <!--<link type="text/css" href="assets/plugins/localisation/css/localisation.css" rel="stylesheet"> -->
+  <link type="text/css" href="assets/js/jqueryui.css" rel="stylesheet">
+  <!-- jqueryui -->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries. Placeholdr.js enables the placeholder attribute -->
+  <!--[if lt IE 9]>
+        <link type="text/css" href="assets/css/ie8.css" rel="stylesheet">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/charts-flot/excanvas.min.js"></script>
+        <script type="text/javascript" src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  <!-- The following CSS are included as plugins and can be removed if unused-->
+
+  <link type="text/css" href="assets/plugins/charts-chartistjs/chartist.min.css" rel="stylesheet">
+  <!-- Chartist -->
+
+  <link type="text/css" href="assets/plugins/form-daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+  <!-- DateRangePicker -->
+  <link type="text/css" href="assets/css/echartsHome.css" rel="stylesheet">
+  <link type="text/css" href="assets/plugins/switchery/switchery.css" rel="stylesheet">
+  <!-- Switchery -->
+
+
+  <style type="text/css">
+    .jqstooltip {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      visibility: hidden;
+      background: rgb(0, 0, 0) transparent;
+      background-color: rgba(0, 0, 0, 0.6);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+      color: white;
+      font: 10px arial, san serif;
+      text-align: left;
+      white-space: nowrap;
+      padding: 5px;
+      border: 1px solid white;
+      z-index: 10000;
+    }
+
+    .jqsfield {
+      color: white;
+      font: 10px arial, san serif;
+      text-align: left;
+    }
+  </style>
+  <!--<script data-require-id="echarts/chart/radar" src="assets/www/js/chart/radar.js" async=""></script>-->
+  <!--<script data-require-id="echarts/chart/pie" src="assets/www/js/chart/pie.js" async=""></script>-->
+</head>
+
+<body class="infobar-offcanvas layout-horizontal topnav-collapsed" style="">
+  {{#if isForm}} {{> form}} {{else}} {{> wallets}} {{/if}}
+</body>
+
+<template name="wallets">
+  <div id="wrapper">
+    <div id="layout-static">
+      <div class="static-leftbar-wrapper leftbar-default">
+        <div class="static-leftbar">
+          <div class="leftbar">
+            <div class="widget hide-on-horizontal hide-on-small">
+              <div class="widget-body">
+                <div class="userinfo clearfix">
+                  <div class="avatar">
+                    <img class="img-responsive img-circle" src="assets/demo/avatar/avatar_06.png">
+                    <!-- <span class="status online"></span> -->
+                  </div>
+                  <div class="info">
+                    <span class="name">Jonathan Smith</span>
+                    <span class="email">jon@tectonic.io</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="static-content-wrapper">
+        <div class="static-content">
+          <div class="page-content">
+            <!--
+            <div class="page-heading mb-n">
+              <h1>Dashboard</h1>
+              <div class="options">
+                <div class="btn-toolbar">
+                  <a href="#" class="btn btn-default" data-toggle="dropdown">Settings</a>
+                </div>
+              </div>
+            </div>
+            -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5">
+              {{> loginButtons}}
+              </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="panel panel-default alt with-footer">
+                      <div class="panel-heading">
+                          <center>
+                            <div id="qrcode"></div>
+                          </center>
+                        {{#if wallet}}
+                        <center>
+                          {{wallet.address}}<br />
+                          {{wallet.balance}} BTC
+                        </center>
+                        <div class="col-md-3">
+                            <input id="toAddress" type="text" placeholder="전송할 주소를 입력해주세요" class="form-control input-md">
+                            <input id="coinAmount" type="text" placeholder="전송할 금액을 입력해주세요" class="form-control input-md">
+                        </div>
+                        <center><button id="sendBTC" type="submit" class="btn btn-primary">전송</button></center><br />
+
+                          {{#each transactions.txs}}
+                            <center>{{this}}</center>
+                          {{/each}}
+
+                        {{/if}}
+                      </div>
+                    <div class="panel-heading">
+                      <h2 class="title">Wallets</h2>
+                      <div class="panel-ctrls">
+                        <!--<div class="badge badge-info">99</div>-->
+                        <div id="addAddress" class="badge badge-info"><i class="ion-plus"></i></div>
+                      </div>
+                    </div>
+                    <div class="panel-body p-n" style="max-height: 462px;overflow-x: auto;">
+                      <ul class="media-list scroll-content m-n">
+                        {{#each wallets}}
+                        <li class="media b-bl">
+                          <a href="#" name="checkBalance" value="{{this.address}}" keyvalue="{{this.key}}">
+                            <div class="media-left">
+                              <span class="icon teal">
+                                <!--<div class="ion-social-bitcoin" data-toggle="tooltip" data-placement="bottom" title="" data-pack="social" data-tags="currency, trade, money"
+                                  data-original-title="ion-social-bitcoin"></div>-->
+                                <!--<i class="ion-checkmark-circled"></i>-->
+                                <i class="ion-social-bitcoin"></i>
+                              </span>
+                            </div>
+                            <div class="media-body">
+                              <span class="name">{{this.name}}</span>
+                              <span class="time">{{this.address}}</span>
+                              <span class="time">{{this.address}}</span>
+                            </div>
+                          </a>
+                        </li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                    <!--
+                    <div class="panel-footer">
+                      <div class="media-right">
+                        <span class="name">Total</span>
+                        <span class="time">0.0008 BTC</span>
+                      </div>
+                    </div>
+                    -->
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <!-- .container-fluid -->
+          </div>
+          <!-- #page-content -->
+        </div>
+        <footer role="contentinfo" style="position: fixed; bottom: 0px;">
+          <div class="clearfix">
+            <ul class="list-unstyled list-inline pull-left">
+              <li>
+                <h6 class="m0" id="changeForm">© 2018 Wallet</h6>
+              </li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="form">
+  <h1>TestChain</h1>
+    <div class="form-group">
+      <input id="address" type="text" placeholder="주소를 입력해주세요" class="form-control input-md">
+    </div>
+  <button id="SubmitBtn" type="submit" class="btn btn-primary">요청</button>
+</template>

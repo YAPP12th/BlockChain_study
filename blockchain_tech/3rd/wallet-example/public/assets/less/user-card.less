@@ -1,0 +1,156 @@
+.user-card{
+	background: #fff;
+	border-style: solid;
+	border-color: #fff;
+	border-width: 16px;
+	margin-top: 16px;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+	.card-holder{
+		.image-container{
+			position: relative;
+			.image-overflow { 
+				display: inline;
+				div.btn-group{
+					background-color: transparent;
+				    color: #fff;
+				    display: inline-block;
+				    left: 0%;
+				    margin: auto;
+				    opacity: 0;
+				    padding: 0;
+				    position: absolute;
+				    right: 0%;
+				    text-align: center;
+				    text-transform: uppercase;
+				    top: 50%;
+				    float: none;
+				    button{
+						float: none;
+						margin-right: -3px;
+				    }
+				}
+				&:before {
+				    content:'\A';
+				    width:100%; 
+				    height:100%;
+				    bottom: 0;
+				    right: 0;
+				    top:0; 
+				    left:0;
+				    position:absolute;
+				    transition: all 0.5s;
+				    -webkit-transition: all 0.5s;	
+				}
+				
+				&.image-round:before{
+				    border-radius: 50%;
+				    content: "\a ";
+				    height: 100%;
+				    left: 0;
+				    margin: 0 auto;
+				    position: absolute;
+				    right: 0;
+				    top: 0;
+				    transition: all 0.5s ease 0s;
+				    width: 50%!important;
+				} 
+				&:hover {
+					&:before {
+						background:rgba(0,0,0,0.6);
+					}
+				    div.btn-group{
+						opacity: 1;
+					}
+				}
+			}
+		} 
+		 .image-overflow.image-round:hover{
+			opacity: 1;
+			&:before {
+				background:rgba(0,0,0,0.6);
+			}
+		} 
+
+		h6{
+			font-size: 18px;
+			color: @gray-darker;			
+		}
+		small{
+			font-size: @font-size-base;
+			color: @gray;
+		}
+		img.img-circle{
+			display: block;
+		    margin: 0 auto;
+		    width: 50%;
+		}
+		.caption {
+			> small{font-size: @font-size-small;color: @gray!important;}
+			.tweet-desc{
+				margin-left: 0;
+				li{
+					a{
+						.title{
+							color: @gray!important;
+							font-size: @font-size-base;
+							margin-bottom: 4px;
+						}
+						.number{
+							color: @gray-darker;
+							font-size: 18px;
+							font-weight: 700;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.media-card{
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+	background: #fff;
+	.media-left{
+		padding-right: 0;
+		a{
+			width: 112px;
+			&:hover{
+				background: transparent;
+			}
+			img{
+				border-radius: @border-radius-base;
+				width: 80px;
+				height: 80px;
+			}
+		}
+		.img-circle{
+			border-radius: 50%!important;
+		}
+	}
+	.media-body{
+		vertical-align: middle;
+		span.text-muted{
+			font-size: @font-size-small;
+			color: @gray!important;
+		}
+	}
+	.media-right{
+		.dropdown-toggle{
+			&:hover{
+				background: transparent;
+			}
+			i{
+				font-size: @icon-font-size-base;
+				color: @gray-dark;
+			}
+		}
+		.dropdown-menu{
+			ul li a{
+				&:hover{
+					background-color: @gray-100;
+				}
+			}
+		}
+		
+	}
+}

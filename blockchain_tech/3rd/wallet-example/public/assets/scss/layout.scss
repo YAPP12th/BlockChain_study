@@ -1,0 +1,35 @@
+html, body {
+	font-family: "Open Sans", sans-serif;
+	height: 100%;
+}
+
+#wrapper {
+	display: table;
+    width: 100%;
+    table-layout: fixed;
+    overflow: auto;
+    height: 100%;
+    position: relative;
+
+    .static-layout {
+    	display: table-row;
+    	height: 100%;
+    	.static-sidebar-wrapper, .static-content-wrapper {vertical-align: top; display: table-cell;}
+    	.static-sidebar-wrapper {
+    		overflow: hidden;
+    		width: 256px;
+    		background: #ddd
+    	}
+    	.static-content-wrapper {
+    		width: 100%;
+    		position: relative;
+    		.static-content {margin-bottom: 32px;}
+    		footer {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				height: 32px;
+    		}
+    	}
+    }
+}

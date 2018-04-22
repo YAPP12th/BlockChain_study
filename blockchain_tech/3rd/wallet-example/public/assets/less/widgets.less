@@ -1,0 +1,149 @@
+// Weather Widget.
+@import "weather.less";			// Separate file that includes it's own fonts
+
+//staff carousel
+.widget-staff{
+    .carousel{
+        .carousel-inner{
+                border: 1px solid #d3dcde;
+                border-radius: 3px;
+            .item{
+                .item-top{
+                    background-color: #ee6c9d;
+                    height: 71px;
+                    border-radius: 3px 3px 0 0;
+                }
+                .item-bottom{
+                    background-color: #ffffff;
+                    border-radius: 0 0 3px 3px; 
+                    .staff-image{
+                        width: 100%;
+                        background-color: transparent;
+                        z-index: 50;
+                        position: relative;
+                        top: -50px;
+                        left: 0;
+                        text-align: center;
+                        img{
+                            width: 88px;
+                            height: 88px;
+                            margin: 0 auto 12px auto;
+                        }
+                        .staff-name{
+                            font-size: 18px;
+                            color: #ee6c9d;
+                            margin: 0; 
+                        }
+                        .staff-designation{
+                            font-size: 14px;
+                            color: #b4c1c7;
+                            margin: 0;
+                        }
+                    }
+                    .staff-info{
+                        margin-top: -20px;
+                        padding-bottom: 15px;
+                        height: 100%;
+                        background-color: #fff;
+                        .info-inner{
+                            font-size: 12px;
+                            color: #90a4ae;
+                            i{
+                                width: 54px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .carousel-control {
+        &.right, &.left{
+            background-image: none;
+            text-shadow: none;
+            span{margin-top: 25px;}
+        }
+        &.right span{
+            margin-right: 10px;
+        }
+        &.left span{
+            margin-left: 10px;
+        }
+    }
+} 
+
+// activities 
+@activities-border-color: #edf0f2;
+
+
+.activity-variant(@activity-bg) {
+    background-color: @activity-bg;
+}
+
+.activities-container .activities-inner .activities-icon {
+    &.activity-paste    {.activity-variant(#319eb0); }
+    &.activity-parle    {.activity-variant(#6678c1); }
+    &.activity-pink     {.activity-variant(#fa4d90); }
+    &.activity-yellow   {.activity-variant(#facd4d); }
+}
+
+
+.activities-container {
+    &:extend(.clearfix all);
+    position: relative;
+    .activities-inner {
+        &:extend(.clearfix all);
+        display: block;
+        padding: 16px;
+        border-bottom: 1px solid @border-lighter;
+        .activities-icon {
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            float: left;
+            border-radius: 100%;
+            text-align: center; 
+            color: #fff;
+            line-height: 32px;
+            font-size: @font-size-base;
+        }
+        .activities-icon-info {
+            padding-left: 48px;
+            .activities-name { 
+                font-size: @font-size-base;
+                color: @gray;
+                margin: 0;
+                span {
+                    font-weight: bold;
+                    font-size: @font-size-base;
+                    color: @gray-dark;
+                }
+            }
+            .activities-time {
+                margin: 0;
+                font-size: @font-size-small;
+                color: @gray-light;
+            }
+        }
+    }
+}
+
+// settings part
+.setting-container {
+    .setting-inner {
+       &:extend(.clearfix all);
+       border-bottom: 1px solid @activities-border-color;
+       padding-top: 12px;
+       .setting-info {
+        p {
+            font-size: 14px;
+            color: #68848f;
+            line-height: 30px;
+          }
+       } 
+    }
+}
+
+
+

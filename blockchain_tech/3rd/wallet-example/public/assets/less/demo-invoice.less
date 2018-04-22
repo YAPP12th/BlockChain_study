@@ -1,0 +1,79 @@
+
+// invoice
+.invoice {
+    .note{font-size: @font-size-base;}
+    address {
+        font-size: @font-size-large;
+    }
+    strong{
+        text-transform: uppercase;
+        font-size: @font-size-large;
+    }
+    ul li, .discount, .vat{
+        font-size: @font-size-large;
+        strong{
+            text-transform: none;
+            font-size: @font-size-large;
+        }
+    }
+
+    table {
+        th{font-size: @font-size-large;border-color: @gray-lighter !important;}
+        td {padding: 16px 8px !important;font-weight: 700;color: @gray-dark;}
+        .title {
+            font-weight: 700;
+            color: @gray-dark;
+        }
+
+        .desc {
+            font-size: @font-size-base;
+            color: @gray!important;
+            font-weight: 400!important;
+        }
+    }
+    .signature{
+        color: @gray-dark;
+    }
+    .designation,.authorization{
+        color: @gray!important;
+    }
+}
+
+
+.invoice1 {
+    address {
+        font-size: @font-size-large;
+    }
+    strong{
+        text-transform: uppercase;
+        font-size: @font-size-large;
+    }
+    ul li, .discount, .vat{
+        font-size: @font-size-large;
+        strong{
+            text-transform: none;
+            font-size: @font-size-large;
+        }
+    }
+
+    table {
+        //> thead > tr > th {border-}
+        th{font-size: @font-size-large; border-color: @gray-lighter !important;}
+        td {padding: 16px 8px !important;font-weight: 700;color: @gray-dark;}
+        .title {
+            font-weight: 700;
+            color: @gray-dark;
+        }
+
+        .desc {
+            font-size: @font-size-small;
+            color: @gray!important;
+        }
+    }
+    .signature{
+        color: @gray-dark;
+    }
+    .designation,.authorization{
+        color: @gray!important;
+    }
+}

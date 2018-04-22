@@ -1,0 +1,517 @@
+//
+// Tectonic
+// (c) KaijuThemes
+//
+// The Theme Layout
+// --------------------------------------------------
+
+/* Some Base Fixes */
+
+:focus {outline:none;}
+::-moz-focus-inner {border:none;}
+
+
+/* Basic Layouts */
+html 					{position: relative;min-height: 100px;}
+html, body 				{height: 100%;}
+
+//Add top margin to any page with fixed header
+.navbar-fixed-top  {
+ 	+ #wrapper, + #layout-fixed {padding-top: 50px !important;}
+ }
+
+
+
+.navbar-fixed-top {width: 100%; position:fixed !important}
+
+#wrapper 				{display:table;width: 100%; table-layout: fixed; overflow: hidden;}
+#layout-static 			{display: table-row; height: 100%;}
+.static-sidebar-wrapper {display: table-cell; overflow: hidden;} 
+.static-sidebar-wrapper, .static-sidebar {width: $sidebar-static-width;}
+.static-content-wrapper {display: table-cell;}
+.static-sidebar-wrapper, .static-content-wrapper {vertical-align: top;}
+footer					{background: $border-lighter; padding: 5px 20px; ul {margin: 0;}}
+
+
+#layout-fixed 			{height: 100%;}
+
+
+
+
+
+// Sticky Footer
+.fixed-content, .horizontal-nav #wrapper {
+	min-height: 100%;
+	margin-bottom: -$footer-height;
+	&:after {
+		content: "";
+		display: block;
+	}
+	+ footer, &:after {
+		height: $footer-height;
+	}
+	+ footer {
+		position: relative;
+	}
+}
+#wrapper {position: relative;}
+
+
+//Footer at bottom
+.static-content-wrapper {position: relative;}
+.static-content {margin-bottom: $footer-height;}
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: $footer-height;
+
+	h6 {font-weight: 400; font-size: $font-size-mini; text-transform: uppercase; letter-spacing: 0.1em;}
+}
+
+#back-to-top {color: $text-color}
+
+
+
+
+//Scroll sidebar
+
+.sidebar-scroll {position: relative;}
+
+.sidebar-scroll .static-sidebar {position: fixed !important}
+
+body.sidebar-hideon-collpase {
+	&.sidebar-collapsed .static-sidebar-wrapper {
+		display: none;
+	}
+	.static-sidebar-wrapper{
+		display: table-cell;
+	}
+}
+
+
+
+/* Boxed Layout */
+
+body.layout-boxed {
+	background: $boxed-background;
+	#topnav, #wrapper, footer {width: $boxed-width; margin: 0 auto;}
+
+	#wrapper {background: $body-bg;}
+
+	.infobar-wrapper {
+		display: none;
+		@include transition(#{"none"});
+	}
+
+}
+
+
+
+
+
+/*Horizontal Navigation*/
+
+
+.horizontal-nav {
+	#page-content {margin-left: 0; }
+
+	nav.navbar {
+		width: 100%;
+		z-index: $zindex-navbar - 10;
+	}
+
+	header.navbar {
+		z-index: $zindex-navbar ;
+	}
+
+	header.navbar-fixed-top + nav.navbar {
+		z-index: $zindex-navbar-fixed - 1; //supporting multiple navbar
+		margin-top: 50px;
+	}
+
+	#leftmenu-trigger {display: none;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: $screen-sm) {
+	// Large Icon Nav
+	#horizontal-navbar.large-icons-nav .navbar-nav {
+		margin-bottom: 0;
+		li {
+			min-width: 100px;
+			a>i {
+				font-size: 24px;
+				display: block;
+				text-align: center;
+				margin-top: 4px;
+				margin-right: 0;
+			}
+			span {
+				display: block;
+				text-align: center;
+				margin-top: 10px;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				font-size: $font-size-mini;
+				line-height: $font-size-mini;
+			}
+		}
+	}
+}
+
+
+
+
+/* Compact */
+
+.compact {
+	.sidebar nav.widget-body>ul.acc-menu>li>a {padding: 10px 20px;}
+	#sidebar .badge {top:10px;}
+}
+
+
+
+
+
+
+
+.page-content {padding: 0 10px;}
+
+
+/* Page Tabs */
+.page-tabs {
+	margin: 0 -10px 20px;
+	background: $page-title-color;
+	padding: 0 10px;
+	border-bottom: 1px solid $border-darker;
+	@extend .clearfix all;
+	
+	.nav.nav-tabs {
+		> li a {color: $gray; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: -1px; border-radius: $border-radius-small $border-radius-small 0 0;}
+		> li.active a {
+			background-color: $body-bg;
+			&:hover {background-color: $body-bg;}
+			color: $gray-darker; 
+			font-weight: 400; 
+			text-transform: uppercase; 
+			letter-spacing: 0.1em;
+			box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.04), 1px 0px 0px 0px rgba(0, 0, 0, 0.04), 0px -1px 0px 0px rgba(0, 0, 0, 0.02), 0px -1px 1px 0px rgba(0, 0, 0, 0.02);
+		}
+		> li > a:hover {color: $gray-dark; border-bottom: 1px solid $border-darker; background-color: rgba(0, 0, 0, 0.02);}
+
+		li.tabdrop {
+			li a {
+				box-shadow: none; 
+				border-radius: 0; 
+				background: none;
+				color: $gray;
+				&:hover {
+					color: $gray-darker;
+					background: none;
+				}
+			}
+			li.active a {
+				color: $gray-darker; 
+				background: none;
+			}
+		}
+	}
+}
+
+
+/* Page Heading */
+.page-heading {background: $page-title-color; padding: 20px; margin: 0 -10px 20px; @extend .clearfix all;}
+.page-heading h1 {float: left; margin: 0; line-height: 34px; font-weight: 300; font-size: 22px;}
+.page-heading h1 small {font-size: $font-size-base; color: $gray-light; margin-left: 10px; font-weight: 400;}
+.page-heading .options {float: right;}
+
+
+/* Breadcrumb Mod */
+.page-content>.breadcrumb {
+	border: 1px solid $border-darker;
+	margin: 20px 10px;
+	padding: 4px 12px;
+}
+
+.page-content > .page-heading + .breadcrumb {margin-top: 0;}
+
+/* Logo */
+.navbar-brand {
+	.text-hide() !important; 
+	background: url("") no-repeat top left; // Put your logo here
+	height: $navbar-height;
+	width: $navbar-brand-width;
+}
+
+//--Tectonic Logo Code: Start - remove/modify this as you see fit
+.navbar-brand {
+	.navbar-default & {background: url("../img/Tectonic-logo.png") no-repeat -35px bottom; } // white logo
+	background: url("../img/Tectonic-logo.png") no-repeat -35px top; //dark logo
+
+	#topnav & {
+		body.topnav-collapsed .navbar-default & {background: url("../img/Tectonic-logo.png") no-repeat 0px bottom; } //white small logo
+		body.topnav-collapsed & {background: url("../img/Tectonic-logo.png") no-repeat 0px top; } //dark small logo
+	}
+}
+
+.navbar-brand {
+	.navbar-default & {background: url("../img/Tectonic-logo.png") no-repeat -35px bottom; }
+	background: url("../img/Tectonic-logo.png") no-repeat -35px top; //dark logo
+}
+//--Tectonic Logo Code: End
+
+
+
+// Hide some sections from being printed
+@media print {
+	.static-sidebar-wrapper, .infobar-wrapper, .demo-options, .page-heading, .page-content > .breadcrumb, footer {
+		display: none;
+	}
+}
+
+
+
+// Breadcrumbs on Top
+
+.breadcrumb-top .page-content {
+	> .breadcrumb {margin: 0 -10px; padding: 4px 20px; border-radius: 0;}
+	> .page-heading {background: none; margin-bottom: 20px;}
+	> .page-heading-white {background: #fff;}
+}
+
+.breadcrumb-top .page-tabs {
+	background: #fff !important;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Topnav Megamenu */
+
+// -- Top Mega Menu that folds in small screens with a fluid break point.  --//
+// As soon as the menu goes into two lines, js autoCollapse() function adds a class 
+// to the body and the menu rearranges itself to collapse. Cool, eh?
+
+body.topnav-collapsed {
+	header.navbar {
+		.navbar-brand {width: 50px;}
+
+		.navbar-collapse {
+			width: auto;
+
+			padding-left: 0;
+			padding-right: 0;
+			width: 100%;
+			clear: both;
+
+			border-top-width: 1px;
+			border-top-style: solid;
+			box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+
+			&.collapse {
+				display: none !important;
+				&.in {
+					display: block !important;
+				}
+			}
+
+			&.in {
+				overflow-y: auto !important;
+				overflow-x: hidden;
+			}
+
+		    // Undo the collapse side padding for navbars with containers to ensure
+		    // alignment of right-aligned contents.
+		    .navbar-fixed-top &,
+		    .navbar-static-top &,
+		    .navbar-fixed-bottom & {
+		    	padding-left: 0;
+		    	padding-right: 0;
+		    }
+
+
+			// Dropdown
+			.navbar-nav {margin: 0;}
+		    .navbar-nav, .navbar-nav > li {float: none !important;}
+
+		    .open .dropdown-menu {
+				position: static;
+				float: none;
+				width: auto !important;
+				margin-top: 0;
+				//background-color: transparent;
+				border: 0;
+				border-radius: 0;
+				box-shadow: none;
+				> li > a,
+				.dropdown-header {
+					padding: 5px 15px 5px 25px;
+				}
+				> li > a {
+					padding: 5px 20px !important;
+					line-height: $line-height-computed;
+					&:hover,
+					&:focus {
+						background-image: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+// Full Height Content
+
+.full-height-content {
+	padding-right: 32px;
+	+ .slimScrollBar {
+		.opacity(1) !important;
+		border: 2px solid $border-lighter;
+		width: 12px !important;
+		border-radius: 6px !important;
+		right: 0px !important;
+		background: $gray !important;
+		+ .slimScrollRail {
+			.opacity(1) !important;
+			background: $border-lighter !important; 
+			width: 12px !important;
+			border-top-left-radius: 0 !important;
+			border-top-right-radius: 0 !important;
+			border-bottom-left-radius: 0 !important;
+			border-bottom-right-radius: $border-radius-small !important;
+			right: 0px !important;
+		}
+	}
+}
+
+
+
+
+
+
+// Coming Soon and Error Pages
+
+html.full-page-image, html.full-page-image body {
+	height: 99%;
+}
+
+body.coming-soon {
+    @include overlay-on-image("../demo/stockphoto/blog_03.jpg", rgba(0,0,0,0.7));
+
+    .btn.btn-social {
+    	padding: 6px 7px;
+    }
+
+	.coming-soon-wrapper {
+
+		@media (min-width: $screen-sm) {
+			position: relative;
+			top:50%;
+			margin-top: -250px;
+		}
+		
+			.countdown {
+				.time-block {
+					@include rgba(white,0.3);
+					padding: 20px 0;
+					margin-bottom: 20px;
+					border-radius: $border-radius-base;
+
+					.digit, .digit-desc {
+						display: block;
+						line-height: 1;
+					}
+
+					.digit {
+						font-size: 36px;
+						font-weight: 300;
+						color: #fff;
+					}
+					.digit-desc {
+						padding-top: 5px;
+						font-size: $font-size-mini;
+						text-transform: uppercase;
+						letter-spacing: 0.1em;
+						color: #fff;
+					}
+				}
+			}
+		
+
+		h1, p {
+			color: #fff;
+		}
+
+		.container {
+			text-align: center;
+			max-width: 500px;
+		}
+	}
+}
+
+body.error {
+	@include overlay-on-image("../demo/stockphoto/blog_04.jpg", rgba(0,0,0,0.7));
+
+	.error-wrapper {
+		@media (min-width: $screen-sm) {
+			position: relative;
+			top:50%;
+			margin-top: -200px;
+		}
+
+		.container {
+			max-width: 450px;
+			text-align: center;
+		}
+
+		h1, p {
+			color: #fff;
+		}
+		a {
+			color: #eee;
+		}
+
+		h1 {
+			font-size: 96px;
+			margin-bottom: 0;
+		}
+	}
+}
+
+//Registration, Sign up, etc. forms that require one page
+.focused-form {
+	.login-logo {
+		text-align: center;
+		display: block;
+		margin-top: 120px;
+		margin-bottom: 50px;
+	}
+}

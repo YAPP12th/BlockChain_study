@@ -1,0 +1,472 @@
+//
+// The Theme Layout
+// --------------------------------------------------
+
+// Some Base Fixes
+
+	html 					{position: relative;min-height: 100px;}
+	html, body 				{height: 100%;}
+
+//Add top margin to any page with fixed header
+	.navbar-fixed-top  {
+		+ #layout-fixed {padding-top: 56px !important;}
+		+ #wrapper  {
+			padding-top: 56px !important;
+		}
+	}
+	.layout-horizontal{
+		.navbar-fixed-top  {
+			+ #wrapper  {
+				padding-top: 128px !important;
+				@media (max-width: @screen-xs-max){
+					padding-top: 56px !important;
+				}
+			}
+		}
+	}
+
+
+// Layout
+	.navbar-fixed-top {width: 100%; position:fixed !important}
+
+	#wrapper 				{display:table;width: 100%; table-layout: fixed; overflow: auto; height: 100%; position: relative;}
+	#layout-static,#layout-scroll 			{display: table-row; height: 100%;}
+	.static-leftbar-wrapper {display: table-cell; overflow: hidden;}
+	.static-leftbar-wrapper, .static-leftbar {width: @leftbar-static-width;}
+	.static-content-wrapper {display: table-cell;}
+	.static-leftbar-wrapper, .static-content-wrapper {vertical-align: top;}
+	footer					{color: @gray; font-weight: 700; background: transparent; padding: 6px 16px; ul {margin: 0 !important} border-top: 0px solid @border-darker;}
+
+	// Other Leftbar Options
+		// Leftbar Small
+		.leftbar-small .static-leftbar-wrapper {width: @leftbar-small-static-width;}
+
+		// Layout Horizontal
+		.layout-horizontal {
+			.static-leftbar-wrapper{
+				width: 100%;
+			}
+			.static-content-wrapper {
+				// position: static;
+			}
+		}
+
+		// Fixed Layout
+		#layout-fixed {
+			height: 100%;
+			.ui-layout-pane {overflow: hidden !important;}
+		}
+
+	.page-content {padding: 0 8px;}
+
+	//leftbar white border
+	.leftbar-bunting {
+		//border-right: 1px solid @border-darker;
+		// @media (max-width: @screen-xs-max){
+		// 	border-right: none;
+		// }
+		//.widget nav.widget-body > ul.acc-menu > li > a {border-right: 1px solid @border-darker;}
+
+	}
+
+	.leftbar-bunting + .static-content-wrapper {
+		border-left: 1px solid @border-darker;
+	}
+	.layout-horizontal .leftbar-bunting + .static-content-wrapper {
+		border-top: 1px solid @border-darker;
+		border-left: 0 !important;
+	}
+	@media (max-width: @screen-xs-max){
+		.leftbar-collapsed .leftbar-bunting + .static-content-wrapper{
+			border-left: none;
+		}
+	}
+
+	//.leftbar-scroll .leftbar-bunting nav.widget-body > ul.acc-menu > li.open > ul {border-right: 1px solid @border-darker !important;}
+
+// Sticky Footer
+	.fixed-content, .horizontal-nav #wrapper {
+		min-height: 100%;
+		margin-bottom: -@footer-height;
+		&:after {
+			content: "";
+			display: block;
+		}
+		+ footer, &:after {
+			height: @footer-height;
+		}
+		+ footer {
+			position: relative;
+		}
+	}
+
+
+//Footer at bottom
+	.static-content-wrapper {position: relative;}
+	.static-content {margin-bottom: 0;}
+	footer {
+		position: relative;
+		bottom: 0;
+		width: 100%;
+		height: @footer-height;
+
+		h6 {font-weight: 700; font-size: @font-size-small; color: @gray; text-transform: uppercase;}
+	}
+
+	#back-to-top {color: @text-color}
+
+
+
+
+//Scroll leftbar
+	.leftbar-scroll {position: relative;}
+	.leftbar-scroll .static-leftbar {position: fixed !important}
+
+	body.leftbar-hideon-collpase {
+		&.leftbar-collapsed .static-leftbar-wrapper {
+			display: none;
+		}
+		.static-leftbar-wrapper{
+			display: table-cell;
+		}
+	}
+
+
+
+// Boxed Layout
+	body.layout-boxed {
+		background: @boxed-background;
+		#topnav, #wrapper, footer {width: @boxed-width; margin: 0 auto;}
+
+		#wrapper {background: @body-bg;}
+
+		.infobar-wrapper {
+			display: none;
+			.transition(~"none");
+		}
+	}
+
+
+// Compact
+
+	.compact {
+		.leftbar nav.widget-body>ul.acc-menu>li>a {padding: 10px 20px;}
+		#leftbar .badge {top:10px;}
+	}
+
+
+
+// Page Tabs
+
+	.page-tabs {
+		margin: 0 -8px 16px;
+		background: @page-title-color;
+		padding: 0 16px !important;
+		border-bottom: 2px solid @border-darker;
+		&:extend(.clearfix all);
+
+		.nav.nav-tabs {
+			> li {margin-bottom: 0 !important;}
+			border: 0;
+			> li a {
+				color: @gray-light;
+				font-weight: 400;
+				font-size: @font-size-large; 
+				text-transform: none;
+				border-radius: 0; 
+				padding: 0 16px;
+				line-height: 48px;
+				border: 0;
+				&:focus {background: none;}
+			}
+			> li.active a {
+				background-color: #fff;
+				border: none!important;
+				color: @brand-info !important;
+				&:hover {background-color: #fff;color: @gray-900;}
+				font-weight: 400;
+				&:after {
+					background-color: @brand-info !important;
+					bottom: -2px;
+					height: 2px;
+				}
+			}
+			> li > a:hover {color: @gray-darker;}
+
+			li.tabdrop {
+				a.dropdown-toggle{
+					border: 0 none;
+				    border-radius: 0;
+				    color: #bdbdbd;
+				    font-size: 15px;
+				    font-weight: 400;
+				    width: 48px;
+				    height: 48px;
+				    line-height: 48px;
+				    padding: 8px;
+				    text-align: center;
+				    text-transform: none;
+				    i{
+				    	line-height: 35px;
+				    	display: block;
+				    	margin: 0 auto;
+				    }
+				}
+				ul.dropdown-menu{
+					position: absolute;
+					background: #fff;
+					border-radius: 0 0 2px 2px;
+					border: medium none;
+					margin-top: 1px;
+					li a {
+						box-shadow: none;
+						border-radius: 0;
+						background: none;
+						color: @gray!important;
+						float: none;
+						border: 0 none;
+					    color: #bdbdbd;
+					    font-size: 15px;
+					    font-weight: 400;
+					    line-height: 20px;
+					    padding: 8px;
+					    text-transform: none;
+					    text-align: left;
+						&:hover {
+							color: @gray-900!important;
+							border-radius: 2px !important;
+						    background: @gray-150!important;
+						    line-height: 16px !important;
+						    padding: 8px !important;
+						}
+					}
+					li.active a {
+						color: @gray-900 !important;
+						background: none;
+					}
+				}
+			}
+		}
+	}
+
+
+// Page Heading
+	.page-heading {background: @page-title-color; padding: 32px; margin: 0 -8px 16px; &:extend(.clearfix all);}
+	.page-heading h1 {float: left; margin: 0; line-height: 32px; font-weight: 300; font-size: 24px;}
+	.page-heading .options {float: right;}
+// Page heading with bg image
+	.page-heading-bg-img{
+		background-image: url(../demo/images/nature_river.jpg);
+		background-size: cover;
+		background-position: center top;
+		background-repeat: no-repeat;
+		margin: 0 -8px 16px;
+		&:extend(.clearfix all);
+		.page-heading, .page-tabs{
+			margin: 0;
+			background-color: rgba(0, 0, 0, .6);
+		}
+		.widget{
+			display: inline-block;
+			float: left;
+			.avatar{
+				width: 56px;
+				height: 56px;
+			}
+			.avatar, .info{
+				float: left;
+			}
+			.info{
+				margin-left: 15px;
+				color: #fff;
+				.name{
+					display: block;
+					font-size: @font-size-h3;
+					text-align: center;
+					margin-top: 0;
+					line-height: 32px;
+				}
+				.email{
+					font-size: @font-size-base;
+					display: block;
+					line-height: 24px;
+					opacity: .72;
+				}
+			}
+		}
+		.page-tabs {
+			.nav.nav-tabs{
+				> li {
+					a{
+						color: rgba(255, 255, 255, .85);
+						&:hover{
+							color: #fff;
+						}
+					}
+					&.active{
+						a{
+							background-color: transparent;
+							&:after{
+								bottom: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+// Breadcrumbs
+	.page-content > .breadcrumb {
+		border: 0 !important;
+		margin: 0px -8px 24px;
+		padding: 8px 24px;
+		display: inherit;
+		background: @gray-100;
+		border-radius: 0;
+		> li {
+			font-size: @font-size-small;
+			line-height: 16px;
+			&:before {color: @gray-lighter;}
+		}
+	}
+
+	.page-content > .page-heading + .breadcrumb {margin-top: -24px;}
+	.page-content > .breadcrumb + .page-heading  {margin-top: -24px;}
+
+
+
+// Logo 
+	.navbar-brand {
+		.text-hide() !important;
+		background: url("") no-repeat top left; // Put your logo here
+		height: @navbar-height;
+		// width: @navbar-brand-width;
+		padding: 16px !important;
+	}
+
+// Hide some sections from being printed
+	@media print {
+		.static-leftbar-wrapper, .infobar-wrapper, .demo-options, .page-heading, .page-content > .breadcrumb, footer {
+			display: none;
+		}
+	}
+
+// Full Height Content
+
+	.full-height-content {
+		.scroll-content {
+			padding-right: 15px;
+		}
+	}
+	
+// Coming Soon and Error Pages
+
+	html.full-page-image, html.full-page-image body {
+		height: 99%;
+	}
+
+	body.coming-soon {
+	    .overlay-on-image("../demo/stockphoto/kijil.jpg", rgba(0,0,0,0.7));
+
+	    .btn.btn-social {
+	    	padding: 6px 7px;
+	    }
+
+		.coming-soon-wrapper {
+
+			@media (min-width: @screen-sm) {
+				position: relative;
+				top:50%;
+				margin-top: -250px;
+			}
+
+				.countdown {
+					.time-block {
+						background-color: rgba(31, 34, 38, 0.8);
+						//box-shadow: 0px 5px 5px rgba(0, 0, 0, .6);
+						padding: 24px 0;
+						margin-bottom: 32px;
+						border-radius: @border-radius-large;
+
+						.digit, .digit-desc {
+							display: block;
+							line-height: 1;
+						}
+
+						.digit {
+							font-size: 40px;
+							font-weight: 300;
+							color: #fff;
+						}
+						.digit-desc {
+							padding-top: 8px;
+							font-size: @font-size-mini;
+							text-transform: uppercase;
+							font-weight: 700;
+							color: #fff;
+						}
+					}
+				}
+
+
+			h1, p {
+				color: #fff;
+			}
+
+			.container {
+				text-align: center;
+				max-width: 500px;
+			}
+		}
+	}
+
+	body.error {
+		.overlay-on-image("../demo/stockphoto/ajul.jpg", rgba(0,0,0,0.7));
+
+		.error-wrapper {
+			@media (min-width: @screen-sm) {
+				position: relative;
+				top:50%;
+				margin-top: -200px;
+			}
+
+			.container {
+				max-width: 450px;
+				text-align: center;
+			}
+
+			h1, p {color: #fff;}
+			a {color: #eee;}
+
+			h1 {
+				font-size: 96px;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	//Registration, Sign up, etc. forms that require one page
+	.focused-form {
+		.login-logo {
+			text-align: center;
+			display: block;
+			margin-top: 120px;
+			margin-bottom: 50px;
+		}
+	}
+
+
+// Sections
+
+	.content-block {
+		background: @body-bg;
+		margin-left: -8px;
+		margin-right: -8px;
+		margin-bottom: 16px;
+		&.first {
+			margin-top: -16px;
+		}
+	}
+
+	.row .content-block {margin-right: 0; margin-left: 0;}
