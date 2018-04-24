@@ -122,7 +122,7 @@
    >	> - A가 B에게 10만 원을 송금한다는 트랜잭션 생성 후 블록체인 네트워크에 전파  
    >	> - 블록을 생성하는 노드는 트랜잭션을 모아 블록에 저장 (거래에 대한 검증 거침)  
    >	> - 노드들이 보관하는 데이터베이스 갱신    
-   >	> #### ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/3_tech_%20process2.png)      
+   >	> #### ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/3_tech_%20process3.png)      
    >	>즉, 거래 내용과 잔액의 상태, 두 가지 정보() 가 있고 거래 내역이 검증되면 잔액의 상태가 변경됨
  
 3. Hash
