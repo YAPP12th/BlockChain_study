@@ -112,22 +112,18 @@
 2. Peer to Peer
    > Q : 정말 돈(코인)을 보내는 건가요?    
    > A : 실제 화폐를 주고 받을 수 없기 때문에, 거래 내용에 맞게 장부를 갱신하는 것으로 대체  
-   >	> 기존 은행 방식 (A와 B가 OO 은행을 이용한다고 가정)  
+   >	> #### 기존 은행 방식 (A와 B가 OO 은행을 이용한다고 가정)  
    >	> - A가 B에게 10만 원을 송금  
    >	> - OO 은행에 있는 장부에서 A가 B에게 10만 원을 보냈다는 기록 작성  
    >	> - A의 잔액이 10만원 감소, B의 잔액이 10만원이 증가  
-   >	> 
-   >	> 블록체인 방식 (A와 B가 OO 은행을 이용한다고 가정)  
-   >	> __처음__  
-   >	> ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/3_tech_%20process2.png)  
+   >	>  
+   >	> #### 블록체인 방식 (A와 B가 OO 은행을 이용한다고 가정)
+   >	> ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/3_tech_%20process2.png)  
    >	> - A가 B에게 10만 원을 송금한다는 트랜잭션 생성 후 블록체인 네트워크에 전파  
    >	> - 블록을 생성하는 노드는 트랜잭션을 모아 블록에 저장 (거래에 대한 검증 거침)  
-   >	> - 노드들이 보관하는 데이터베이스 갱신  
-   >    > 
-   >	> __이후__
-   >	> ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/3_tech_%20process2.png)  
-   >	> 
-   >	> 즉, 거래 내용과 잔액의 상태, 두 가지 정보() 가 있고 거래 내역이 검증되면 잔액의 상태가 변경됨
+   >	> - 노드들이 보관하는 데이터베이스 갱신    
+   >	> #### ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/3_tech_%20process2.png)      
+   >	>즉, 거래 내용과 잔액의 상태, 두 가지 정보() 가 있고 거래 내역이 검증되면 잔액의 상태가 변경됨
  
 3. Hash
    > 일정한 값에 대해 항상 동일한 결과 값 보장  
