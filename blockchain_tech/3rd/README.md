@@ -17,10 +17,10 @@
            비트코인 계좌 -> 계좌로 권한 이전  
            
 - 블록    : 블록 헤더와 트랜잭션의 집합  
-  ![image](https://onoffmix.com/images/event/130182/s)  
+  ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/3_tech_block.png)  
   
 - 블록체인 : 블록이 연결되어 있는 연결체   
-  ![image](https://onoffmix.com/images/event/130182/s)  
+  ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/3_tech_blockchain.png)  
   
   
 ##### 1.3 구성원 관련 용어 정의
@@ -118,17 +118,22 @@
    >	> - A의 잔액이 10만원 감소, B의 잔액이 10만원이 증가  
    >	> 
    >	> 블록체인 방식 (A와 B가 OO 은행을 이용한다고 가정)  
+   >	> __처음__  
+   >	> ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/3_tech_%20process2.png)  
    >	> - A가 B에게 10만 원을 송금한다는 트랜잭션 생성 후 블록체인 네트워크에 전파  
    >	> - 블록을 생성하는 노드는 트랜잭션을 모아 블록에 저장 (거래에 대한 검증 거침)  
    >	> - 노드들이 보관하는 데이터베이스 갱신  
-   >	>   
+   >    > 
+   >	> __이후__
+   >	> ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/3_tech_%20process2.png)  
+   >	> 
    >	> 즉, 거래 내용과 잔액의 상태, 두 가지 정보() 가 있고 거래 내역이 검증되면 잔액의 상태가 변경됨
  
 3. Hash
    > 일정한 값에 대해 항상 동일한 결과 값 보장  
    > 역추적은 불가능함  
    > Merkle Tree : Hash value 의 tree 그룹  
-   > ![image](https://onoffmix.com/images/event/130182/s)  
+   > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/3_tech_merkletree.png)  
    > 위와 같이 해시값과 해시값에 대한 새로운 해시값을 만듬  
    >  -> 기존 데이터 검증을 위해 4개의 해시값이 필요했으나 이걸 통해 하나의 해시값만 있으면 됨
  
@@ -142,7 +147,7 @@
 과정 (A -> B 10만원 보냄)
 - (의사 표시)     클라이언트가 새로운 트랜잭션 생성  
 - (서명 및 유효화) A의 비밀키로 서명하여 거래 유효화
-- ![image](https://onoffmix.com/images/event/130182/s)  
+- ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/3_tech_assign.png)  
 - (전송 및 전파)  비트코인 네트워크(비트코인 노드)에 전송 및 모든 노드에게도 전파
    > 분산합의 과정을 통해 인증 및 공유  
    > 트랜잭션들을 모아 __블록 생성(마이닝)__
