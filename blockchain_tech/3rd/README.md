@@ -164,3 +164,4 @@ A : 블록체인 내에서는 시간이 존재하지 않는다
 - 체인 내용이 저장되는 곳 : https://steemit.com/kr-qna/@mattchoi/nzfmv-kr-qna  
 - 초등학생도 이해할 수 있는 블록체인 : http://ppss.kr/archives/150114  
 - 블록체인 거래 과정 : https://steemit.com/kr/@jsralph/5f59rf-1  
+- [BlockChain] 블록체인에 관하여 - 2 : http://ulismoon.tistory.com/11
