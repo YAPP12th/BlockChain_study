@@ -29,4 +29,5 @@
 -> [이더리움 솔리디티 실습 튜토리얼](https://programmers.co.kr/learn/courses/36)
 
 
-![image](https://onoffmix.com/images/event/130182/s)  
+![image](https://rsk3j.app.goo.gl/jTpt)  
+![image](https://rsk3j.app.goo.gl/tqgE)  
