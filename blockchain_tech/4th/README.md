@@ -29,5 +29,5 @@
 -> [이더리움 솔리디티 실습 튜토리얼](https://programmers.co.kr/learn/courses/36)
 
 
-![image](https://rsk3j.app.goo.gl/jTpt)  
-![image](https://rsk3j.app.goo.gl/tqgE)  
+![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/4_study1.png?raw=true)  
+![image](https://raw.githubusercontent.com/YAPP12th/BlockChain_study/master/blockchain_tech/0.Reference/photo/4_study2.png)  
