@@ -46,13 +46,19 @@ contract Greeting {
 
 #### 2과. 자료형 알아보기
 ##### 주요 자료형
-- **uint** = unsigned Int       ex) uint year = 2013;
-- **int** = 정수형      ex) int year = 2013;
-- **bool** = 논리 자료형      ex) bool isHappy = true;
-- **string** = 문자열    ex) string name = “Java”;
-- **bytes** = 바이트    ex) byte byte = 1;
-- **address** = 이더리움 주소값     ex) address addr = 0x72ba7d8e73fe8eb666ea66babc8116a41bfb10e2;
-> 수를 정확히 다룰 수 없는 수는 이더를 다룰 수 없기 때문에, **부동소수점**은 지원하지 않음
+- **uint** = unsigned Int  
+  ex) uint year = 2013;
+- **int** = 정수형  
+  ex) int year = 2013;
+- **bool** = 논리 자료형  
+  ex) bool isHappy = true;
+- **string** = 문자열  
+  ex) string name = “Java”;
+- **bytes** = 바이트  
+  ex) byte byte = 1;
+- **address** = 이더리움 주소값  
+  ex) address addr = 0x72ba7d8e73fe8eb666ea66babc8116a41bfb10e2;
+- **부동소수점**은, 수를 정확히 다룰 수 없는 수는 이더를 다룰 수 없기 때문에 지원하지 않음
 
 ##### 레퍼런스 자료형
 - **배열** = 자료형이 같은 데이터를 묶은 자료구조    ex) int[] year = [2018, 2019, 2020]
