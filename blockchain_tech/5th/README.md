@@ -9,10 +9,10 @@
 
 ### 2. 다룬 내용  
 #### 1. KISA-NH 해커톤 준비  
-   > NH 1~3차 강연
-   ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/5_NH_1.png?raw=true)  
-   > 더루프 1~4차 강연  
-   ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/5_TheLoop.png?raw=true)  
+   > NH 1 - 3차 강연  
+   > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/5_NH_1.png?raw=true)  
+   > 더루프 1 - 4차 강연  
+   > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/5_TheLoop.png?raw=true)  
 
 #### 2. solidity 개인 공부
    > [해당 링크](https://programmers.co.kr/learn/courses/36)를 통한 solidity 실습 진행  
