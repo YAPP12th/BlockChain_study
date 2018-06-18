@@ -24,4 +24,5 @@
    > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_presentation2_2.jpeg?raw=true)  
    > 
    > #### 결과 : 밀탱크팀 장려상 수상   
+   > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_award_all.jpeg?raw=true)  
    > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_award.png?raw=true)  
