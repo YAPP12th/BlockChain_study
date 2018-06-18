@@ -8,8 +8,8 @@
 ### 2. 세부 내용  
 #### 1. (ALL) 해커톤 참여  
    > #### 총 2개 팀이 참여하였음  
-   > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_presentation.jpeg?raw=true)  
    > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_develop.jpeg?raw=true)  
+   > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_presentation.jpeg?raw=true)  
    > 
    > #### 결과 : 장려상 수상 (밀탱크 : 건강관리 서비스를 도와주는 음식 추천 주문 서비스)  
    > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_award.png?raw=true)  
