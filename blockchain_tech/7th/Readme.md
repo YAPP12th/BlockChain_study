@@ -25,7 +25,7 @@
    > 정리 및 발표자 : **헌진**    
    > 정리링크 : https://github.com/KimHunJin/Blockchain/wiki/make-dapp-rest-api  
 
-   > #### 1일차 (참여인원 : **헌진**, 상우, 관현, 성호)
+   > #### 1일차 (참여인원 : **헌진(PM)**, 상우, 관현, 성호)
    > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/7_develop1.jpeg?raw=true)  
-   > ### 2일차 (참여인원 : **헌진**, 상우, 현기, 경원)
+   > #### 2일차 (참여인원 : **헌진(PM)**, 상우, 현기, 경원)
    > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/7_develop2.jpeg?raw=true)
