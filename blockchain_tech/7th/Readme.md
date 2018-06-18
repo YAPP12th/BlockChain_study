@@ -11,7 +11,7 @@
   
 ### 2. 세부 내용  
 #### 1. 팀별 아이디어 발표  
-   > 4팀 준비 및 발표 (찬영, 소현 / 강산, 희원 / 유리, 다혜, 은비 / 태균, 다희)  
+   > 4팀 준비 및 발표 (**찬영**, 소현 / **강산**, 희원 / **유리**, 다혜, 은비 / **태균**, 다희)  
    > #### 1. 찬영팀  
    > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/7_presentation1.jpeg?raw=true)  
    > #### 2. 강산팀  
