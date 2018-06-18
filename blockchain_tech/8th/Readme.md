@@ -7,7 +7,7 @@
   
 ### 2. 세부 내용  
 #### 1. (ALL) 해커톤 참여  
-   > 총 2개 팀 참여
+   > #### 총 2개 팀이 참여하였음  
    > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_presentation.jpeg?raw=true)  
    > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_develop.jpeg?raw=true)  
    > 
