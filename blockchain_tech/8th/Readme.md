@@ -18,9 +18,9 @@
    > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_presentation2_1.jpeg?raw=true)  
 
    > #### 시연
-   > #### 밀탱크  
+   > - 밀탱크  
    > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_presentation1_2.jpeg?raw=true)  
-   > #### 감자전  
+   > - 감자전  
    > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_presentation2_2.jpeg?raw=true)  
    > 
    > #### 결과 : 밀탱크팀 장려상 수상   
