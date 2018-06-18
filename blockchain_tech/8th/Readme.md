@@ -12,9 +12,9 @@
    > - 감자전 : 농업 크라우드펀딩 플랫폼
    > 
    > #### 프레젠테이션 발표  
-   > #### 밀탱크  
+   > - 밀탱크  
    > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_presentation1_1.jpeg?raw=true)  
-   > #### 감자전  
+   > - 감자전  
    > ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_presentation2_1.jpeg?raw=true)  
 
    > #### 시연
