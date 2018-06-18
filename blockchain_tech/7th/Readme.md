@@ -4,14 +4,11 @@
 - 일시 : 5월 26일(Trend)
 - 장소 : 디캠프
 - 각 팀별 아이디어 발표
-  ![image](https://onoffmix.com/images/event/134902/s)  
   
 - 일시 : 5월 29, 30일(Tech)
-- 장소 : 강남 힐스터디룸  
+- 장소 : 강남 힐스터디룸
 - Node.js 기반 블록체인 DApp 기초 개발 실습
-  ![image](https://onoffmix.com/images/event/134902/s)  
-
-
+  
 ### 2. 세부 내용  
 #### 1. 팀별 아이디어 발표  
    > 3개의 팀으로 나누어 발표 진행  
