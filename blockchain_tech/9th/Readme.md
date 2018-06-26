@@ -36,19 +36,7 @@
   - 5. **tweet 메시지 링크** Faucet 창에 입력
   - 6. 행복하게 이더를 받고 마무리~
 
-- #### 2. 기초 세팅
-  - 1. **크롬 웹스토어**에서 MetaMask 다운로드  
-      ![image]()
-  - 2. MetaMask 회원가입 (가입 후 **seed 값** 을 기억할 것!)
-      ![image]()
-  - 3. Infura 회원가입 (가입 후 **네트워크 링크** 를 기억할 것)
-      ![image]()
-  - 4. twitter 가입 후 아래 문장으로 tweet
-      <pre><code> Requesting faucet funds into 0x***YOUR_ADDRESS(METAMASK)***************** on the #Rinkeby #Ethereum test network.</code></pre>
-  - 5. **tweet 메시지 링크** Faucet 창에 입력
-  - 6. 행복하게 이더를 받고 기초 세팅 마무리
-
-- #### 3. solidity 설정
+- #### 2. solidity 설정
   - 1. **solidity IDE** 접속  
       ![image]()
   - 2. **Voting.sol** 을 생성하여 아래 코드 작성
@@ -95,7 +83,7 @@
       ![image]()
   - 4. 해당 컨트렉트 함수에 적절한 데이터를 입력하여 후보자에 투표, 리스트 확인, 후보자 판별 등이 가능함
 
-- #### 4. node.js 개발
+- #### 3. node.js 개발
   - 1. **express** 프로젝트 생성
     <pre><code>npm install -g express-generator  // express 프로젝트 생성기 설치
     express myapp 		          // express 프로젝트 myapp 생성</pre></code>
