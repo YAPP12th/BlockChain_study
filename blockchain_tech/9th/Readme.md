@@ -26,11 +26,11 @@
 
 - #### 1. 과정
   - 1. **크롬 웹스토어**에서 MetaMask 다운로드  
-      ![image]()
+      ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_ridickle_1_1.png?raw=true)
   - 2. MetaMask 회원가입 (가입 후 **seed 값** 을 기억할 것!)
-      ![image]()
+      ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_ridickle_1_2.png?raw=true)
   - 3. Infura 회원가입 (가입 후 **네트워크 링크** 를 기억할 것)
-      ![image]()
+      ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_ridickle_1_3.png?raw=true)
   - 4. twitter 가입 후 아래 문장으로 tweet
       <pre><code> Requesting faucet funds into 0x***YOUR_ADDRESS(METAMASK)***************** on the #Rinkeby #Ethereum test network.</code></pre>
   - 5. **tweet 메시지 링크** Faucet 창에 입력
@@ -38,7 +38,7 @@
 
 - #### 2. solidity 설정
   - 1. **solidity IDE** 접속  
-      ![image]()
+      ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_ridickle_2_1.png?raw=true)
   - 2. **Voting.sol** 을 생성하여 아래 코드 작성
     <pre><code>pragma solidity ^0.4.18;
     
@@ -77,10 +77,10 @@
 			return false;
 		}
 	}</code></pre>
-      ![image]()
+      ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_ridickle_2_2.png?raw=true)
   - 3. Compile에서 Start to compile 클릭 후 -> candidates 에 아래 데이터 입력 -> transact 클릭
     <pre><code>(["0x4d69630000000000000000000000000000000000000000000000000000000001", "0x4d69630000000000000000000000000000000000000000000000000000000002", "0x4d69630000000000000000000000000000000000000000000000000000000003", "0x4d69630000000000000000000000000000000000000000000000000000000004”])</code></pre>
-      ![image]()
+      ![image](https://github.com/YAPP12th/BlockChain_study/blob/master/blockchain_tech/0.Reference/photo/8_ridickle_2_3.png?raw=true)
   - 4. 해당 컨트렉트 함수에 적절한 데이터를 입력하여 후보자에 투표, 리스트 확인, 후보자 판별 등이 가능함
 
 - #### 3. node.js 개발
